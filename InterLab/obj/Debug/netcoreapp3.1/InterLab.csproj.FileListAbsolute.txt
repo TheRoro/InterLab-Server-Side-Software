@@ -1,0 +1,10 @@
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\bin\Debug\netcoreapp3.1\InterLab.exe
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\obj\Debug\netcoreapp3.1\InterLab.csprojAssemblyReference.cache
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\obj\Debug\netcoreapp3.1\InterLab.AssemblyInfoInputs.cache
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\obj\Debug\netcoreapp3.1\InterLab.AssemblyInfo.cs
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\obj\Debug\netcoreapp3.1\InterLab.RazorTargetAssemblyInfo.cache
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\obj\Debug\netcoreapp3.1\staticwebassets\InterLab.StaticWebAssets.Manifest.cache
+C:\Users\PCMYM\source\UPC\Aplicaciones_web\WuaposStudios\InterLab\obj\Debug\netcoreapp3.1\staticwebassets\InterLab.StaticWebAssets.xml
