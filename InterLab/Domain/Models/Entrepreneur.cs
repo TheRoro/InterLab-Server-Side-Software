@@ -12,7 +12,11 @@ namespace InterLab.Domain.Models
         public string Name { get; set; }
         public int Id_RUC { get; set; }
 
+
         //RelationShips
+        public int UserIdEntre { get; set; } 
+
+        public User User { get; set; }
 
         public IList<Internship> Internships { get; set; } = new List<Internship>();
     }

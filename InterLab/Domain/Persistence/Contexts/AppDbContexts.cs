@@ -6,9 +6,19 @@ namespace InterLab.Domain.Persistence.Contexts
 {
     public class AppDbContexts : DbContext
     {
-        public DbSet<User> users { get; set; }
-        public DbSet<Student> students { get; set; }
-        public DbSet<Entrepreneurs> entrepreneurs { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Entrepreneur> Entrepreneurs { get; set; }
+
+        public DbSet<Document> Documents { get; set; }
+
+        public DbSet<University> Universities { get; set; }
+
+        public DbSet<Company> Companies { get; set; }
+
+        public DbSet<Qualification> Qualification { get; set; }
+
+        public DbSet<Request> Requests { get; set; }
 
         public AppDbContexts(DbContextOptions<AppDbContexts> options) : base(options) { }
 
@@ -29,19 +39,19 @@ namespace InterLab.Domain.Persistence.Contexts
                 HasMaxLength(20);
             builder.Entity<User>().Property(p => p.Mail).IsRequired().
                 HasMaxLength(20);
-            builder.Entity<User>().Property(p => p.password).IsRequired().
+            builder.Entity<User>().Property(p => p.Password).IsRequired().
                 HasMaxLength(20);
             builder.Entity<User>().Property(p => p.Phone_Number).IsRequired().
                 HasMaxLength(15);
-            builder.Entity<User>().Property(p => p.country).IsRequired().
+            builder.Entity<User>().Property(p => p.Country).IsRequired().
                 HasMaxLength(20);
-            builder.Entity<User>().Property(p => p.city).IsRequired().
+            builder.Entity<User>().Property(p => p.City).IsRequired().
                 HasMaxLength(20);
 
-            //
- 
-            builder.Entity<Student>().HasMany(p => p.Users).
-                 WithOne(p => p.Student).HasForeignKey(p => p.Id);
+
+            //Relation
+            builder.Entity<User>().HasMany(p => p.Student).
+                 WithOne(p => p.User).HasForeignKey(p => p.UserId);
 
         }
     }
