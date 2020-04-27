@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\InterLab",
+    "\\InterLab\\Domain",
+    "\\InterLab\\Domain\\Models",
+    "\\InterLab\\Domain\\Persistence",
+    "\\InterLab\\Domain\\Persistence\\Contexts",
+    "\\InterLab\\obj"
+  ],
+  "SelectedNode": "\\InterLab\\Domain\\Models\\Entrepreneur.cs",
+  "PreviewInSolutionExplorer": false
+}
