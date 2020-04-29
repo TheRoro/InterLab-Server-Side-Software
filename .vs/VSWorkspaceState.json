@@ -7,6 +7,6 @@
     "\\InterLab\\Persistence",
     "\\InterLab\\Persistence\\Context"
   ],
-  "SelectedNode": "\\InterLab\\Domain\\Models\\Process.cs",
+  "SelectedNode": "\\InterLab\\Persistence\\Context\\AppDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

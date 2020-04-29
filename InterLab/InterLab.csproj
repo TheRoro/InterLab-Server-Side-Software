@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,7 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Repository\" />
+    <Folder Include="Domain\InterfacesRepository\" />
+    <Folder Include="Domain\Services\InterfaceService\" />
+    <Folder Include="Domain\Services\Comunication\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 
