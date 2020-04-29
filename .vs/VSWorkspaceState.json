@@ -4,10 +4,9 @@
     "\\InterLab",
     "\\InterLab\\Domain",
     "\\InterLab\\Domain\\Models",
-    "\\InterLab\\Domain\\Persistence",
-    "\\InterLab\\Domain\\Persistence\\Contexts",
-    "\\InterLab\\obj"
+    "\\InterLab\\Persistence",
+    "\\InterLab\\Persistence\\Context"
   ],
-  "SelectedNode": "\\InterLab\\Domain\\Models\\Entrepreneur.cs",
+  "SelectedNode": "\\InterLab\\Domain\\Models\\Process.cs",
   "PreviewInSolutionExplorer": false
 }

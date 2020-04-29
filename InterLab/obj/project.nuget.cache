@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2+NrJ5WOy6C5WRcmtogDvztDUz97FvPLGg3iy823rkwDK90TeqLUZC7b/+ut74x5Mgm7kJxJvBEb1pKB3JlFBw==",
+  "dgSpecHash": "UL0B+iAvj8oCH0AsPAMRqr5+dg8e6aRAc364f6uzTUom2A6azvBfjm4qfMO7UjpOmTtbEZiyqH63MH4+UtVlgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj",
+  "projectFilePath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PCMYM\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
