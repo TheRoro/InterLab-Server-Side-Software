@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj": {}
+    "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj": {
+    "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj",
+        "projectUniqueName": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj",
         "projectName": "InterLab",
-        "projectPath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj",
+        "projectPath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\InterLab.csproj",
         "packagesPath": "C:\\Users\\PCMYM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\obj\\",
+        "outputPath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PCMYM\\AppData\\Roaming\\NuGet\\NuGet.Config",

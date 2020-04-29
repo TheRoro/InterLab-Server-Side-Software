@@ -26,7 +26,7 @@ namespace InterLab.Domain.Models
 
         //Relation
         public int EntrepreneurId { get; set; }
-        public Entrepreneur Entrepreneur {get; set;}
+        public Worker worker {get; set;}
 
         public IList<Request> Requests { get; set; } = new List<Request>();
     }

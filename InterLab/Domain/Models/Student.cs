@@ -9,14 +9,10 @@ namespace InterLab.Domain.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public string University { get; set; }
 
 
         //RelationShips
-
-        public int UserId { get; set; }
-
-        public User User { get; set; }
 
         // muestra los documentos del estudiante
         public IList<Document> Documents { get; set; } = new List<Document>();
