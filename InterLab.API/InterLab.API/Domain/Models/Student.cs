@@ -9,16 +9,18 @@ namespace InterLab.Domain.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
         public string University { get; set; }
 
+        //Relationships
+        public int RepositoryId { get; set; }
+        public Repository Repository { get; set; }
+        public int ProfileId { get; set; }
+        public Profile Profile { get; set; }
 
-        //RelationShips
-
-        // muestra los documentos del estudiante
         public IList<Document> Documents { get; set; } = new List<Document>();
         public IList<Qualification> Qualifications { get; set; } = new List<Qualification>();
         public IList<Request> Requests { get; set; } = new List<Request>();
+
     }
 
 }

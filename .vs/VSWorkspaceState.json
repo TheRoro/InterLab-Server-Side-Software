@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
-    "",
     "\\InterLab",
     "\\InterLab\\Domain",
-    "\\InterLab\\Domain\\Models",
-    "\\InterLab\\Persistence",
     "\\InterLab\\Persistence\\Context"
   ],
-  "SelectedNode": "\\InterLab\\Persistence\\Context\\AppDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
