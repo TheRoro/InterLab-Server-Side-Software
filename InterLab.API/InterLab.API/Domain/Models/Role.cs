@@ -11,6 +11,8 @@ namespace InterLab.Domain.Models
 
         public string Name { get; set; }
 
+        public string Mail { get; set; }
+
         public string Type { get; set; }
 
         public string Description { get; set; }
