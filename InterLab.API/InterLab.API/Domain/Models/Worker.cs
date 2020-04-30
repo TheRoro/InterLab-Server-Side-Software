@@ -14,6 +14,7 @@ namespace InterLab.Domain.Models
 
         //RelationShips
 
+        public IList<Role> Roles { get; set; } = new List<Role>();
    
     }
 }
