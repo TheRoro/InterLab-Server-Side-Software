@@ -12,9 +12,13 @@ namespace InterLab.Domain.Models
         public string Name { get; set; }
 
 
-        //RelationShips
+        //Relationships
 
-        public IList<Role> Roles { get; set; } = new List<Role>();
+        public int RoleId { get; set;  }
+        public Role Role { get; set; }
+
+        public int CompanyId { get; set; }
+        public Company Company { get; set; } 
    
     }
 }

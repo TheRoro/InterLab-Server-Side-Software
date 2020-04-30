@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace InterLab.Domain.Models
 {
     public class Document
     {
         public int Id { get; set; }
-
         public string Name { get; set; }
-
         public string Description { get; set; }
-
+        //public fileclass Document { get; set; }
         //ask data type for document: byte?
 
-        //Relation
-        public int StuedntId { get; set; }
+        //Relationships
+        public int StudentId { get; set; }
         public Student Student { get; set; }
+
+        public int RepositoryId { get; set; }
+        public Repository Repository { get; set; }
     }
 }

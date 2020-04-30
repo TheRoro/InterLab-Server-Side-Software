@@ -14,11 +14,11 @@ namespace InterLab.Domain.Models
         public string Description { get; set; }
 
 
-        //RelationShips
+        //Relationships
+        public int StudentId { get; set; }
+        public Student Student { get; set; }
 
-
-        public IList<Student> Students { get; set; } = new List<Student>();
-
-        public IList<Internship> Internships { get; set; } = new List<Internship>();
+        public int InternshipId { get; set; }
+        public Internship Internship { get; set; }
     }
 }
