@@ -18,7 +18,5 @@ namespace InterLab.Domain.Models
         public int StudentId { get; set; }
         public Student Student { get; set; }
 
-        public int RepositoryId { get; set; }
-        public Repository Repository { get; set; }
     }
 }
