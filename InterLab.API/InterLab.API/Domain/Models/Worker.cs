@@ -17,8 +17,7 @@ namespace InterLab.Domain.Models
         public int RoleId { get; set;  }
         public Role Role { get; set; }
 
-        public int CompanyId { get; set; }
-        public Company Company { get; set; } 
-   
+        public IList<Company> Companies { get; set; } = new List<Company>();
+
     }
 }
