@@ -12,8 +12,6 @@ namespace InterLab.Domain.Models
         public string University { get; set; }
 
         //Relationships
-        public int RepositoryId { get; set; }
-        public Repository Repository { get; set; }
         public int ProfileId { get; set; }
         public Profile Profile { get; set; }
 
