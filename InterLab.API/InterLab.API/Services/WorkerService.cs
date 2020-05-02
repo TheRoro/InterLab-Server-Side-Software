@@ -1,4 +1,3 @@
-using InterLab.API.Domain.IServices.InterfaceServices;
 using InterLab.API.Domain.IServices;
 using Microsoft.AspNetCore.Mvc;
 using System;
