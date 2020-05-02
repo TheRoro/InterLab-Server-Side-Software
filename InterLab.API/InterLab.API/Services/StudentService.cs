@@ -1,5 +1,5 @@
 ﻿
-using InterLab.API.Domain.IServices.InterfaceServices;
+using InterLab.API.Domain.IServices
 using InterLab.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
