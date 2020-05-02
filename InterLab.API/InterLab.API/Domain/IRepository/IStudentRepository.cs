@@ -1,4 +1,5 @@
 ﻿using InterLab.API.Controllers;
+using InterLab.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,6 @@ namespace InterLab.API.Domain.InterfaceRepository
 {
     public interface IStudentRepository
     {
-        
+        Task<IEnumerable<Student>> ListAsync();
     }
 }
