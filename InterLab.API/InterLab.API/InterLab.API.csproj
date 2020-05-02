@@ -10,8 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Domain\IServices\Communication\" />
-    <Folder Include="Domain\IServices\InterfaceServices\" />
-    <Folder Include="Services\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 
   <ItemGroup>
