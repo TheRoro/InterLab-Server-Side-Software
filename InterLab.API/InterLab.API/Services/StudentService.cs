@@ -1,5 +1,7 @@
-﻿using InterLab.API.Domain.IServices;
+﻿using InterLab.API.Domain.IRepositories;
+using InterLab.API.Domain.IServices;
 using InterLab.API.Domain.Models;
+using InterLab.API.Persistence.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,17 @@ namespace InterLab.API.Services
 {
     public class StudentService : IStudentService
     {
-        public Task<IEnumerable<Student>> ListAsync()
+
+        private readonly IStudentRepository _studentRepository;
+
+        public StudentService(IStudentRepository studentRepository)
         {
-            throw new NotImplementedException();
+            _studentRepository = studentRepository;
+        }
+
+        public async Task<IEnumerable<Student>> ListAsync()
+        {
+            return await _studentRepository.ListAsync();
         }
     }
 }
