@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterLab.Domain.Models
+namespace InterLab.API.Domain.Models
 {
     public class Qualification
     {

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InterLab.API.Controllers
 {
-    public class ProfileController : Controller
+    public class ProfilesController : Controller
     {
 
     }

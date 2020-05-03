@@ -1,4 +1,4 @@
-﻿using InterLab.Domain.Models;
+﻿using InterLab.API.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

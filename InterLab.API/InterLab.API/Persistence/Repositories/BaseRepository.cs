@@ -1,8 +1,5 @@
-﻿using InterLab.API.Persistence.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
+using InterLab.API.Persistence.Contexts;
 
 namespace InterLab.API.Persistence.Repositories
 {
@@ -13,8 +10,8 @@ namespace InterLab.API.Persistence.Repositories
         protected readonly AppDbContext _context;
 
         public BaseRepository(AppDbContext context)
-            {
+        {
             _context = context;
-            }
+        }
     }
 }
