@@ -26,8 +26,6 @@ C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\Inter
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csproj.CopyComplete
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csproj.CoreCompileInputs.cache
-C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csproj.CoreCompileInputs.cache
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.AssemblyInfoInputs.cache
@@ -66,3 +64,13 @@ C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLa
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.dll
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.pdb
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.genruntimeconfig.cache
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.deps.json
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.runtimeconfig.json
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.runtimeconfig.dev.json
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.dll
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.pdb
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.dll
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.pdb
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.genruntimeconfig.cache
+C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.dll

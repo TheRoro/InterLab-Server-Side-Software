@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace InterLab.API.Domain.Models
 
 {
-    public class Profile
+    public class Profile  
     {
         public int Id { get; set; }
         public string FullName { get; set; }
