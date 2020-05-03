@@ -1,4 +1,3 @@
-using InterLab.API.Domain.IServices.InterfaceServices;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
-    public class DocumentController : Controller
+    public class RolesController : Controller
     {
 
     }

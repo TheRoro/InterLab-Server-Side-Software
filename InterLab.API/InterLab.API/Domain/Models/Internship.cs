@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterLab.Domain.Models
+namespace InterLab.API.Domain.Models
 {
     public class Internship
     {
@@ -15,7 +15,6 @@ namespace InterLab.Domain.Models
         public DateTime StartingDate { get; set; }
         public DateTime FinishingDate { get; set; }
         public double Salary { get; set; }
-        public int Participants { get; set; }
 
         //Relationships
         public IList<Role> Roles { get; set; } = new List<Role>();

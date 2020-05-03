@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterLab.Domain.Models
+namespace InterLab.API.Domain.Models
 {
     public class Student
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string University { get; set; }
 
         //Relationships
         public int ProfileId { get; set; }

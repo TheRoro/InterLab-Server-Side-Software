@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace InterLab.Domain.Models
+namespace InterLab.API.Domain.Models
 {
     public class Document
     {
