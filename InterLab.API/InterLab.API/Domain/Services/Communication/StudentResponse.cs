@@ -1,8 +1,7 @@
 using System;
 using InterLab.API.Domain.Models;
-using InterLab.API.Domain.IServices.Communication;
 
-namespace InterLab.API.Domain.IServices.Communication
+namespace InterLab.API.Domain.Services.Communication
 {
     public class StudentResponse : BaseResponse
     {
