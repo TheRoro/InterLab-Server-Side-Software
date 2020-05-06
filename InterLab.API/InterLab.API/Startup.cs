@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using InterLab.API.Domain.IRepositories;
 using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Repositories;
 using InterLab.API.Persistence.Contexts;
 using InterLab.API.Persistence.Repositories;
 using InterLab.API.Services;
@@ -41,7 +42,11 @@ namespace InterLab.API
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IStudentService, StudentService>();
+
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
 
         }
 
