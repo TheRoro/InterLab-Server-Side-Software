@@ -17,6 +17,10 @@ namespace InterLab.API.Domain.Models
         public int RoleId { get; set;  }
         public Role Role { get; set; }
 
+        public int ProfileId { get; set; }
+
+        public Profile Profile { get; set; } 
+
         public IList<Company> Companies { get; set; } = new List<Company>();
 
     }
