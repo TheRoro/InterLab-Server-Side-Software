@@ -1,5 +1,5 @@
 using System;
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

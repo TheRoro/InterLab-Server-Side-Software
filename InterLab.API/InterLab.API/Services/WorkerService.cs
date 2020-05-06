@@ -1,4 +1,4 @@
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

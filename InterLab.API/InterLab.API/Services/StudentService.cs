@@ -1,5 +1,5 @@
 ﻿using InterLab.API.Domain.IRepositories;
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using InterLab.API.Domain.Models;
 using InterLab.API.Persistence.Repositories;
 using Microsoft.AspNetCore.Mvc;
