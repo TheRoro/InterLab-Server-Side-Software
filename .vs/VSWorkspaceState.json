@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\InterLab",
-    "\\InterLab\\Domain"
+    "\\InterLab.API",
+    "\\InterLab.API\\InterLab.API",
+    "\\InterLab.API\\InterLab.API\\Domain",
+    "\\InterLab.API\\InterLab.API\\Persistence",
+    "\\InterLab.API\\InterLab.API\\Persistence\\Contexts"
   ],
-  "SelectedNode": "\\InterLab\\Domain\\Services",
+  "SelectedNode": "\\InterLab.API\\InterLab.API\\Persistence\\Contexts\\AppDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
