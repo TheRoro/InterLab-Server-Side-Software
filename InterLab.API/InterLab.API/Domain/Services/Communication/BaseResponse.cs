@@ -1,7 +1,7 @@
 using System;
 using InterLab.API.Domain.Models;
 
-namespace InterLab.API.Domain.IServices.Communication
+namespace InterLab.API.Domain.Services.Communication
 {
     public abstract class BaseResponse
     {

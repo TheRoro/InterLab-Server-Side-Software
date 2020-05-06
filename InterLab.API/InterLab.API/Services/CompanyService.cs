@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Repositories;
 
