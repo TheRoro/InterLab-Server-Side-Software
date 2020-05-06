@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using InterLab.API.Domain.IRepositories;
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using InterLab.API.Domain.Repositories;
 using InterLab.API.Persistence.Contexts;
 using InterLab.API.Persistence.Repositories;

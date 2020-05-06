@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using InterLab.API.Domain.Models;
 using InterLab.API.Resources;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
-    public class CompanyController : Controller
+    [Route("/api/[controller]")]
+    public class CompaniesController : Controller
     {
         private readonly ICompanyService _companyService;
         private readonly IMapper _mapper;
 
-        CompanyController(ICompanyService companyService, IMapper mapper)
+        CompaniesController(ICompanyService companyService, IMapper mapper)
         {
             _companyService = companyService;
             _mapper = mapper;
@@ -24,8 +25,8 @@ namespace InterLab.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<CompanyResource>> GetAllAsync()
         {
-            var students = await _companyService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(students);
+            var companies = await _companyService.ListAsync();
+            var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(companies);
             return resources;
         }
 

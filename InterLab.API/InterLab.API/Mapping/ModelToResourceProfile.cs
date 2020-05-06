@@ -14,6 +14,7 @@ namespace InterLab.API.Mapping
         {
             CreateMap<Student, StudentResource>();
             CreateMap<Company, CompanyResource>();
+            CreateMap<Internship, InternshipResource>();
         }
     }
 }

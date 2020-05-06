@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using InterLab.API.Domain.Models;
-using InterLab.API.Domain.IServices;
+using InterLab.API.Domain.Services;
 using InterLab.API.Controllers;
 using AutoMapper;
 using InterLab.API.Persistence.Repositories;
