@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using InterLab.API.Domain.Models;
+using System.Reflection;
 
 namespace InterLab.API.Persistence.Contexts
 {
@@ -44,7 +45,8 @@ namespace InterLab.API.Persistence.Contexts
                 (
                 new Company { Id = 100, Name = "InterLab" },
                 new Company { Id = 101, Name = "FastTech" },
-                new Company { Id = 102, Name = "WAPO" }
+                new Company { Id = 102, Name = "WAPO" },
+                new Company { Id = 103, Name = "TeamMatch"}
                 );
 
             //2. Document Entity
