@@ -85,9 +85,6 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Process>().Property(p => p.Description).IsRequired().HasMaxLength(50);
             //Relationships
 
-            //builder.Entity<Process>().HasOne(p => p.Roles)
-
-
 
 
 
@@ -101,6 +98,8 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Profile>().Property(p => p.Degree).IsRequired().HasMaxLength(30);
             builder.Entity<Profile>().Property(p => p.Degree).IsRequired().HasMaxLength(30);
             builder.Entity<Profile>().Property(p => p.Description).IsRequired().HasMaxLength(100);
+            //
+
 
 
             //6. Qualification Entity
@@ -128,11 +127,14 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Role>().Property(p => p.Type).IsRequired().HasMaxLength(10);
             builder.Entity<Role>().Property(p => p.Description).IsRequired().HasMaxLength(30);
 
-
+  
             //9. Student Entity
             builder.Entity<Student>().ToTable("Students");
             builder.Entity<Student>().HasKey(p => p.Id);
             builder.Entity<Student>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+
+            builder.Entity<Student>().HasOne(p => p.Profile)
+                .WithOne(p => p.Student).HasForeignKey<Profile>(p => p.StudentId);
 
 
             //10. Worker Entity
@@ -140,6 +142,9 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Worker>().HasKey(p => p.Id);
             builder.Entity<Worker>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
 
+            //Relationship
+            builder.Entity<Worker>().HasOne(p => p.Profile)
+               .WithOne(p => p.Worker).HasForeignKey<Profile>(p => p.WorkerId);
 
         }
     }
