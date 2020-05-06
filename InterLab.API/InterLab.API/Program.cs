@@ -20,7 +20,7 @@ namespace InterLab.API
             using (var scope = host.Services.CreateScope())
             using (var context = scope.ServiceProvider.GetService<AppDbContext>())
             {
-                context.Database.EnsureCreated();
+                //context.Database.EnsureCreated();
             }
             host.Run();
         }

@@ -6,16 +6,16 @@ namespace InterLab.API.Persistence.Contexts
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Company>       Companies       { get; set; }
-        public DbSet<Document>      Documents       { get; set; }
-        public DbSet<Internship>    Internships     { get; set; }
-        public DbSet<Process>       Processes       { get; set; }
-        public DbSet<Profile>       Profiles        { get; set; }
-        public DbSet<Qualification> Qualifications  { get; set; }
-        public DbSet<Request>       Requests        { get; set; }
-        public DbSet<Role>          Roles           { get; set; }
-        public DbSet<Student>       Students        { get; set; }
-        public DbSet<Worker>        Workers         { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<Internship> Internships { get; set; }
+        public DbSet<Process> Processes { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Qualification> Qualifications { get; set; }
+        public DbSet<Request> Requests { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Worker> Workers { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -70,6 +70,12 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Internship>().Property(p => p.Salary).IsRequired().HasMaxLength(30);
             //Relationships
 
+            builder.Entity<Internship>().HasMany(p => p.Roles)
+                .WithOne(p => p.Internship).HasForeignKey(p => p.InternshipId);
+            builder.Entity<Internship>().HasMany(p => p.Requests)
+                .WithOne(p => p.Internship).HasForeignKey(p => p.InternshipId);
+            builder.Entity<Internship>().HasOne(p => p.Profile)
+                .WithOne(p => p.Internship).HasForeignKey<Profile>(p => p.InternshipId);
 
             //4. Process Entity
             builder.Entity<Process>().ToTable("Processes");
@@ -77,6 +83,14 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Process>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Process>().Property(p => p.Name).IsRequired().HasMaxLength(30);
             builder.Entity<Process>().Property(p => p.Description).IsRequired().HasMaxLength(50);
+            //Relationships
+
+            //builder.Entity<Process>().HasOne(p => p.Roles)
+
+
+
+
+
 
             //5. Profile Entity
             builder.Entity<Profile>().ToTable("Profiles");
