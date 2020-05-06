@@ -20,6 +20,9 @@ namespace InterLab.API.Domain.Models
         public int StudentId { get; set; }
         public Student Student { get; set; }
 
+        public int WorkerId { get; set; }
+        public Worker Worker { get; set; }
+
         public int InternshipId { get; set; }
         public Internship Internship { get; set; }
     }
