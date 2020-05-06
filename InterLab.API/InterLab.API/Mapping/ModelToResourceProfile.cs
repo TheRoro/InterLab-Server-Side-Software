@@ -13,6 +13,7 @@ namespace InterLab.API.Mapping
         public ModelToResourceProfile()
         {
             CreateMap<Student, StudentResource>();
+            CreateMap<Company, CompanyResource>();
         }
     }
 }
