@@ -74,3 +74,44 @@ C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\Inter
 C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.pdb
 C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.genruntimeconfig.cache
 C:\Users\PCMYM\source\repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.exe
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.deps.json
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.runtimeconfig.json
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.runtimeconfig.dev.json
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\InterLab.API.pdb
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csprojAssemblyReference.cache
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csproj.CoreCompileInputs.cache
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.AssemblyInfoInputs.cache
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.AssemblyInfo.cs
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.RazorTargetAssemblyInfo.cache
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csproj.CopyComplete
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\staticwebassets\InterLab.API.StaticWebAssets.Manifest.cache
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\staticwebassets\InterLab.API.StaticWebAssets.xml
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.dll
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.pdb
+D:\Dropbox\Documentos\Ciclo 5\Aplicaciones Web\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.genruntimeconfig.cache
