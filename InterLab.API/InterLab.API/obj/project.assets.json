@@ -1530,19 +1530,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PCMYM\\.nuget\\packages\\": {}
+    "C:\\Users\\Sadaaki\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+      "projectUniqueName": "D:\\Dropbox\\Documentos\\Ciclo 5\\Aplicaciones Web\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
       "projectName": "InterLab.API",
-      "projectPath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
-      "packagesPath": "C:\\Users\\PCMYM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\obj\\",
+      "projectPath": "D:\\Dropbox\\Documentos\\Ciclo 5\\Aplicaciones Web\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+      "packagesPath": "C:\\Users\\Sadaaki\\.nuget\\packages\\",
+      "outputPath": "D:\\Dropbox\\Documentos\\Ciclo 5\\Aplicaciones Web\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\PCMYM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sadaaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1611,7 +1615,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
