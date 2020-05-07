@@ -12,7 +12,7 @@ namespace InterLab.API.Services
     {
         private readonly ICompanyRepository _companyRepository;
 
-        CompanyService(ICompanyRepository companyRepository)
+        public CompanyService(ICompanyRepository companyRepository)
         {
             _companyRepository = companyRepository;
         }

@@ -16,7 +16,7 @@ namespace InterLab.API.Controllers
         private readonly ICompanyService _companyService;
         private readonly IMapper _mapper;
 
-        CompaniesController(ICompanyService companyService, IMapper mapper)
+        public CompaniesController(ICompanyService companyService, IMapper mapper)
         {
             _companyService = companyService;
             _mapper = mapper;

@@ -23,7 +23,5 @@ namespace InterLab.API.Domain.Models
         public IList<Worker> Workers { get; set; } = new List<Worker>();
 
         public IList<Qualification> Qualifications { get; set; } = new List<Qualification>();
-
-        public IList<Internship> Internships { get; set; } = new List<Internship>();
     }
 }

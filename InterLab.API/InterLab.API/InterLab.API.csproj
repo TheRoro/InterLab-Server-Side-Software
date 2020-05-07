@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Domain\Models\Repository.cs" />
+    <Compile Remove="Extention\**" />
+    <Content Remove="Extention\**" />
+    <EmbeddedResource Remove="Extention\**" />
+    <None Remove="Extention\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extention\" />
+    <Compile Remove="Domain\Models\Repository.cs" />
   </ItemGroup>
 
   <ItemGroup>

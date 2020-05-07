@@ -13,7 +13,7 @@ namespace InterLab.API.Domain.Models
 
 
         //Relation con internship y con student
-        public int StudentId { get; set; }
+        public int UserId { get; set; } 
         public Student Student { get; set; }
 
         public int InternshipId { get; set; }
