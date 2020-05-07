@@ -1,29 +1,31 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace InterLab.API.Domain.Models
-
 {
-    public class Profile  
+    public class Profile
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
         public string Field { get; set; }
-        public string University { get; set; }
+
+        public int semester { get; set; }
+
         public string Degree { get; set; }
+
         public string Description { get; set; }
 
+        //RelatiONShips
 
-        //Relationships
         public int StudentId { get; set; }
         public Student Student { get; set; }
 
         public int WorkerId { get; set; }
         public Worker Worker { get; set; }
 
-        public int InternshipId { get; set; }
+        public int Intershipid { get; set; }
         public Internship Internship { get; set; }
+
     }
 }

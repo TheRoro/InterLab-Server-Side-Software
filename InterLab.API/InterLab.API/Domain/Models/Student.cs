@@ -9,13 +9,18 @@ namespace InterLab.API.Domain.Models
     {
         public int Id { get; set; }
 
+
         //Relationships
-        public int ProfileId { get; set; }
-        public Profile Profile { get; set; }
+        public int UserId { get; set; }
+
+        public Users Users { get; set; }
+
+
 
         public IList<Document> Documents { get; set; } = new List<Document>();
         public IList<Qualification> Qualifications { get; set; } = new List<Qualification>();
         public IList<Request> Requests { get; set; } = new List<Request>();
+        public IList<Profile> Profile { get; set; } = new List<Profile>();
 
     }
 
