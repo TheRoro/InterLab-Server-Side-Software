@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
+    [Route("/api/[controller]")]
     public class InternshipsController : Controller
     {
         private readonly IInternshipService _internshipService;

@@ -11,7 +11,7 @@ namespace InterLab.API.Persistence.Repositories
 {
     public class CompanyRepository : BaseRepository, ICompanyRepository
     {
-        CompanyRepository(AppDbContext context) : base(context) { }
+        public CompanyRepository(AppDbContext context) : base(context) { }
         public async Task<IEnumerable<Company>> ListAsync()
         {
             return await _context.Companies.ToListAsync();

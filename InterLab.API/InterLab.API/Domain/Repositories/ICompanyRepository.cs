@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Domain.Repositories
 {
-    interface ICompanyRepository
+    public interface ICompanyRepository
     {
         Task<IEnumerable<Company>> ListAsync();
     }

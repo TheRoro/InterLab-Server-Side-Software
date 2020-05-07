@@ -17,10 +17,10 @@ namespace InterLab.API.Domain.Models
         public double Salary { get; set; }
 
         //Relationships
-        public IList<Role> Roles { get; set; } = new List<Role>();
 
-        public int ProfileId { get; set; }
-        public Profile Profile { get; set; }
+        public IList<Profile> Profile { get; set; } = new List<Profile>();
+
+        //public IList<Roles_Processes> Roles_Processes { get; set; } = new List<Roles_Processes>();
 
         public IList<Request> Requests { get; set; } = new List<Request>();
     }
