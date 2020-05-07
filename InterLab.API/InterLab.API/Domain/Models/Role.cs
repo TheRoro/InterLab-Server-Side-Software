@@ -14,18 +14,13 @@ namespace InterLab.API.Domain.Models
         public string Description { get; set; }
 
         //Relationships
-        //uno a uno con intenships
-        public int InternshipId { get; set; }
-        public Internship Internship { get; set; }
 
-        public int RoleId { get; set; }
-        public Role Roles { get; set; }
+        public int WorkerId { get; set; } 
+        public Worker Worker { get; set; }
 
-
-        //muchos a muchos con workers
-        public IList<Worker> Workers { get; set; } = new List<Worker>();
+        
         //muchos a muchos con processes
-        public IList<Process> Processes { get; set; } = new List<Process>();
+        //public IList<Roles_Processes> Roles_Processes { get; set; } = new List<Roles_Processes>();
 
 
     }

@@ -12,7 +12,7 @@ namespace InterLab.API.Domain.Models
 
 
         //Relationhips
-        public int StudentId { get; set; }
+        public int UserId { get; set; } 
         public Student Student { get; set; }
 
         public int CompanyId { get; set; }

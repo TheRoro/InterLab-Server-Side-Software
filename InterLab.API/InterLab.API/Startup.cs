@@ -42,6 +42,7 @@ namespace InterLab.API
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IStudentService, StudentService>();
+            
 
             services.AddAutoMapper(typeof(Startup));
 

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using InterLab.API.Domain.Models;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace InterLab.API.Persistence.Contexts
 {
@@ -12,11 +13,15 @@ namespace InterLab.API.Persistence.Contexts
         public DbSet<Internship> Internships { get; set; }
         public DbSet<Process> Processes { get; set; }
         public DbSet<Profile> Profiles { get; set; }
+        public DbSet<UserData> UserDatas { get; set; }
         public DbSet<Qualification> Qualifications { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Worker> Workers { get; set; }
+
+        //public DbSet<Roles_Processes> Roles_Processes { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -43,10 +48,8 @@ namespace InterLab.API.Persistence.Contexts
 
             builder.Entity<Company>().HasData
                 (
-                new Company { Id = 100, Name = "InterLab" },
-                new Company { Id = 101, Name = "FastTech" },
-                new Company { Id = 102, Name = "WAPO" },
-                new Company { Id = 103, Name = "TeamMatch"}
+                new Company { Id = 100, Name = "InterLab" ,Description = "Xd", Sector = "2", Mail = "WaposStuidios.com",
+                Phone_Number = "123456789", Address = "CERRO DE CALIXTO", City = "SJM", Country = "Perú"}      
                 );
 
             //2. Document Entity
@@ -57,7 +60,7 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Document>().Property(p => p.Description).IsRequired().HasMaxLength(200);
             //Relationships
             builder.Entity<Document>().HasOne(p => p.Student)
-                .WithMany(p => p.Documents).HasForeignKey(p => p.StudentId);
+                .WithMany(p => p.Documents).HasForeignKey(p => p.UserId);
 
 
             //3. Internship Entity
@@ -70,14 +73,9 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Internship>().Property(p => p.StartingDate).IsRequired().HasMaxLength(20);
             builder.Entity<Internship>().Property(p => p.FinishingDate).IsRequired().HasMaxLength(20);
             builder.Entity<Internship>().Property(p => p.Salary).IsRequired().HasMaxLength(30);
-            //Relationships
-
-            builder.Entity<Internship>().HasMany(p => p.Roles)
-                .WithOne(p => p.Internship).HasForeignKey(p => p.InternshipId);
+            //Relationships         
             builder.Entity<Internship>().HasMany(p => p.Requests)
                 .WithOne(p => p.Internship).HasForeignKey(p => p.InternshipId);
-            builder.Entity<Internship>().HasOne(p => p.Profile)
-                .WithOne(p => p.Internship).HasForeignKey<Profile>(p => p.InternshipId);
 
             //4. Process Entity
             builder.Entity<Process>().ToTable("Processes");
@@ -89,22 +87,37 @@ namespace InterLab.API.Persistence.Contexts
 
 
 
-
-
-            //5. Profile Entity
+            // 5. Profile Entity
             builder.Entity<Profile>().ToTable("Profiles");
             builder.Entity<Profile>().HasKey(p => p.Id);
-            builder.Entity<Profile>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Profile>().Property(p => p.FullName).IsRequired().HasMaxLength(30);
-            builder.Entity<Profile>().Property(p => p.Field).IsRequired().HasMaxLength(30);
-            builder.Entity<Profile>().Property(p => p.Degree).IsRequired().HasMaxLength(30);
-            builder.Entity<Profile>().Property(p => p.Degree).IsRequired().HasMaxLength(30);
-            builder.Entity<Profile>().Property(p => p.Description).IsRequired().HasMaxLength(100);
-            //
+            builder.Entity<Profile>().Property(p => p.Field).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Profile>().Property(p => p.semester).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Profile>().Property(P => P.Degree).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Profile>().Property(p => p.Description).IsRequired().ValueGeneratedOnAdd();
+            
+ 
+            
+
+            //6. UserData Entity
+            builder.Entity<UserData>().ToTable("UserDatas");
+            builder.Entity<UserData>().HasKey(p => p.Id);
+            builder.Entity<UserData>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<UserData>().Property(p => p.FirstName).IsRequired().HasMaxLength(30);
+            builder.Entity<UserData>().Property(p => p.LastName).IsRequired().HasMaxLength(30);
+            builder.Entity<UserData>().Property(p => p.Mail).IsRequired().HasMaxLength(30);
+            //Buscar como hacerlo tipo Date
+            builder.Entity<UserData>().Property(p => p.Date_Register).IsRequired().HasMaxLength(30);
+            builder.Entity<UserData>().Property(p => p.Phone_numbre).IsRequired().HasMaxLength(10);
+            builder.Entity<UserData>().Property(p => p.City).IsRequired().HasMaxLength(30);
+            builder.Entity<UserData>().Property(p => p.Country).IsRequired().HasMaxLength(20);
+            builder.Entity<UserData>().Property(p => p.Type).IsRequired().GetType();
+            //RelationShips
+            builder.Entity<UserData>().HasOne(p => p.User)
+                .WithMany(P => P.UserDatas).HasForeignKey(P => P.UserId);
 
 
 
-            //6. Qualification Entity
+            //7. Qualification Entity
             builder.Entity<Qualification>().ToTable("Qualifications");
             builder.Entity<Qualification>().HasKey(p => p.Id);
             builder.Entity<Qualification>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -112,7 +125,7 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Qualification>().Property(p => p.Score).IsRequired().HasMaxLength(10);
 
 
-            //7. Request Entity
+            //8. Request Entity
             builder.Entity<Request>().ToTable("Requests");
             builder.Entity<Request>().HasKey(p => p.Id);
             builder.Entity<Request>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -120,7 +133,7 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Request>().Property(p => p.DateSend).IsRequired().HasMaxLength(10);
 
 
-            //8. Role Entity
+            //9. Role Entity
             builder.Entity<Role>().ToTable("Roles");
             builder.Entity<Role>().HasKey(p => p.Id);
             builder.Entity<Role>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -128,25 +141,42 @@ namespace InterLab.API.Persistence.Contexts
             builder.Entity<Role>().Property(p => p.Mail).IsRequired().HasMaxLength(20);
             builder.Entity<Role>().Property(p => p.Type).IsRequired().HasMaxLength(10);
             builder.Entity<Role>().Property(p => p.Description).IsRequired().HasMaxLength(30);
+            //RelattionShips  
 
-  
-            //9. Student Entity
+
+
+            //10. Student Entity
             builder.Entity<Student>().ToTable("Students");
             builder.Entity<Student>().HasKey(p => p.Id);
-            builder.Entity<Student>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
 
-            builder.Entity<Student>().HasOne(p => p.Profile)
-                .WithOne(p => p.Student).HasForeignKey<Profile>(p => p.StudentId);
+            builder.Entity<Student>().HasOne(p => p.Users)
+                  .WithMany(p => p.Students).HasForeignKey(p => p.UserId);
+
+            builder.Entity<Student>().HasMany(p => p.Qualifications)
+                .WithOne(p => p.Student).HasForeignKey(p => p.UserId);
+
+            builder.Entity<Student>().HasMany(p => p.Requests)
+                .WithOne(p => p.Student).HasForeignKey(p => p.UserId);
 
 
-            //10. Worker Entity
+            //11. Worker Entity
             builder.Entity<Worker>().ToTable("Workers");
-            builder.Entity<Worker>().HasKey(p => p.Id);
-            builder.Entity<Worker>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-
             //Relationship
-            builder.Entity<Worker>().HasOne(p => p.Profile)
-               .WithOne(p => p.Worker).HasForeignKey<Profile>(p => p.WorkerId);
+            builder.Entity<Worker>().HasOne(p => p.Users)
+               .WithMany(p => p.Workers).HasForeignKey(p => p.Userid);
+
+            builder.Entity<Worker>()
+                .HasKey(t => new { t.Userid, t.CompanyId });
+
+            builder.Entity<Worker>().HasOne(p => p.Company)
+                .WithMany(p => p.Workers).HasForeignKey(p => p.CompanyId);
+
+            builder.Entity<Worker>().HasOne(p => p.Users)
+                .WithMany(p => p.Workers).HasForeignKey(p => p.Userid);
+
+          
+                
+ 
 
         }
     }
