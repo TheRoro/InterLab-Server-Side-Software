@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nL4C+rF1N4StATcI77HpAHMqT6TtNLp1jy5OeHnOtX/mTK67zJLmQbPuQF48bCOxNPZe9MK/8mGP0cxSAgI42Q==",
+  "dgSpecHash": "p31XWZy2zD+KZXMSkEn5N5ceBTEQCQdKlyRLv0z5YOkKZtGdvidh91oiV1ks3u66WPR7HLTvS7vQklQWs043KQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.3\\microsoft.entityframeworkcore.design.3.1.3.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.3\\microsoft.entityframeworkcore.inmemory.3.1.3.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.3\\microsoft.entityframeworkcore.relational.3.1.3.nupkg.sha512",
+    "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.3\\microsoft.extensions.caching.abstractions.3.1.3.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.3\\microsoft.extensions.caching.memory.3.1.3.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.3\\microsoft.extensions.configuration.3.1.3.nupkg.sha512",
@@ -28,6 +29,11 @@
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.3\\microsoft.extensions.primitives.3.1.3.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\PCMYM\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\PCMYM\\.nuget\\packages\\swashbuckle.aspnetcore\\5.4.1\\swashbuckle.aspnetcore.5.4.1.nupkg.sha512",
+    "C:\\Users\\PCMYM\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.4.1\\swashbuckle.aspnetcore.swagger.5.4.1.nupkg.sha512",
+    "C:\\Users\\PCMYM\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.4.1\\swashbuckle.aspnetcore.swaggergen.5.4.1.nupkg.sha512",
+    "C:\\Users\\PCMYM\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.4.1\\swashbuckle.aspnetcore.swaggerui.5.4.1.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\PCMYM\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
