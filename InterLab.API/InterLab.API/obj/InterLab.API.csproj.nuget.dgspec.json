@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {}
+    "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {
+    "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+        "projectUniqueName": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
         "projectName": "InterLab.API",
-        "projectPath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+        "projectPath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
         "packagesPath": "C:\\Users\\PCMYM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\obj\\",
+        "outputPath": "C:\\Users\\PCMYM\\source\\repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PCMYM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,6 +59,10 @@
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
               "version": "[3.1.3, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.20, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
