@@ -157,7 +157,6 @@ C:\Users\USER\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterL
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\8rb\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csprojAssemblyReference.cache
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
