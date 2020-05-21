@@ -15,8 +15,12 @@ namespace InterLab.API.Domain.Models
         //ask data type for document: byte?
 
         //Relationships
-        public int UserId { get; set; } 
-        public Student Student { get; set; }
+        //public int UserId { get; set; } 
+        //public Student Student { get; set; }
+
+        //ManyToOne con User?
+        //public int UserId {get; set;}
+        //public User User {get; set;}
 
     }
 }

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\8rb\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {}
+    "E:\\UPC\\CICLO V\\Web\\BACKEND C# INTERLAB\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\8rb\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {
+    "E:\\UPC\\CICLO V\\Web\\BACKEND C# INTERLAB\\InterLab.API\\InterLab.API\\InterLab.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8rb\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+        "projectUniqueName": "E:\\UPC\\CICLO V\\Web\\BACKEND C# INTERLAB\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
         "projectName": "InterLab.API",
-        "projectPath": "C:\\Users\\8rb\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
-        "packagesPath": "C:\\Users\\8rb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8rb\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\obj\\",
+        "projectPath": "E:\\UPC\\CICLO V\\Web\\BACKEND C# INTERLAB\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "E:\\UPC\\CICLO V\\Web\\BACKEND C# INTERLAB\\InterLab.API\\InterLab.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\8rb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
