@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8L2Up3EOJUvOo1q3fQZzepXkXpk2LlVOHMk0G+O5tvrX/3ORgxn34+Ve83DqEAtpboocP8G5tACA7EvgFXyh1w==",
+  "dgSpecHash": "7nlrpWk81GU2eS4DFg97Yz5Jq+hrhYw6r44w7bYG8AOu91h+Cx3gJM3U/4VOfqnFqAH0NS9LOjQ2Z8NRrjVrQA==",
   "success": true,
-  "projectFilePath": "E:\\UPC\\CICLO V\\Web\\BACKEND C# INTERLAB\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+  "projectFilePath": "E:\\UPC\\CICLO V\\Web\\BACKEND C# Interlab\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

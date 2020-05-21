@@ -3,18 +3,12 @@ using InterLab.API.Domain.Models;
 
 namespace InterLab.API.Domain.Services.Communication
 {
-    public class StudentResponse : BaseResponse
+    public class StudentResponse : BaseResponse<Student>
     {
-        public Student Student { get; private set; }
 
-        public StudentResponse(bool success, string message, Student student) : base(success, message)
-        {
-            Student = student;
-        }
+        public StudentResponse(Student student) : base(student) { }
 
-        public StudentResponse(Student student) : this(true, string.Empty, student) { }
-
-        public StudentResponse(string message) : this(false, message, null) { }
+        public StudentResponse(string message) : base(message) { }
 
 
     }
