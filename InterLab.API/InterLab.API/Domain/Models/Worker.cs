@@ -8,18 +8,22 @@ namespace InterLab.API.Domain.Models
 {
     public class Worker
     {
-        //Relationships
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public DateTime DateCreated { get; set; }
+        public string Type { get; set; }
 
-        public int Userid { get; set; }
+        //Relationships:
 
-        public Users Users { get; set; }
+        //One to many with Internships
+        public IList<Internship> Internships { get; set; } = new List<Internship>();
 
-        public int CompanyId { get; set; }
-        public Company Company { get; set; }
+        //One to one with Profile
+        public Profile Profile { get; set; }
 
-        public IList<Role> Roles { get; set; } = new List<Role>();
-
-        public IList<Profile> Profile { get; set; } = new List<Profile>();
-
+        //Many to Many with Company
+        public List<WorkerCompany> WorkerCompanies { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace InterLab.API.Domain.Models
 
         //Relationships:
 
+        //One to One with Internship
         public int InternshipId { get; set; }
         public Internship Internship { get; set; }
 

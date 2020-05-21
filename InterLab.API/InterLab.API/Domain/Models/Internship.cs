@@ -11,17 +11,22 @@ namespace InterLab.API.Domain.Models
         public int Id { get; set; }
         public string State { get; set; }
         public string Description { get; set; }
-        public DateTime DatePublished { get; set; } //Set is only used on creation ask Angel
+        public DateTime PublicationDate { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime FinishingDate { get; set; }
         public double Salary { get; set; }
 
-        //Relationships
+        //Relationships:
 
+        //One to One with Requirement
         public Requirement Requirement { get; set; }
 
-        //public IList<Roles_Processes> Roles_Processes { get; set; } = new List<Roles_Processes>();
-
+        //One to Many with Request
         public IList<Request> Requests { get; set; } = new List<Request>();
+
+        //One to Many with Worker
+        public int WorkerId { get; set; }
+        public Worker Worker { get; set; }
+
     }
 }
