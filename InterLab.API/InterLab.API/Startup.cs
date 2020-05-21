@@ -6,7 +6,7 @@ using AutoMapper;
 using InterLab.API.Domain.IRepositories;
 using InterLab.API.Domain.Services;
 using InterLab.API.Domain.Repositories;
-using InterLab.API.Persistence.Contexts;
+using InterLab.API.Domain.Persistence.Contexts;
 using InterLab.API.Persistence.Repositories;
 using InterLab.API.Services;
 using Microsoft.AspNetCore.Builder;

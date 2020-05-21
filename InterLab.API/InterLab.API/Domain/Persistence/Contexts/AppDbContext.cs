@@ -4,7 +4,7 @@ using InterLab.API.Domain.Models;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace InterLab.API.Persistence.Contexts
+namespace InterLab.API.Domain.Persistence.Contexts
 {
     public class AppDbContext : DbContext
     {

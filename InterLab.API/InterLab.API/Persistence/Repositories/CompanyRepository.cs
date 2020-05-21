@@ -1,6 +1,6 @@
 ﻿using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Repositories;
-using InterLab.API.Persistence.Contexts;
+using InterLab.API.Domain.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
