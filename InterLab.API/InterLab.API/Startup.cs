@@ -39,8 +39,7 @@ namespace InterLab.API
 
             services.AddDbContext<AppDbContext>(options =>
             {
-                //options.UseInMemoryDatabase("InterLab-api-in-memory");
-                //options.UseMySQL("server=localhost;database=interlab;user=root;password=password");
+                //options.UseMySQL("server=localhost;database=interlab_c#;user=root;password=password");
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
             });
 
