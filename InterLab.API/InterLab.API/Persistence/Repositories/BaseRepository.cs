@@ -1,5 +1,5 @@
 ﻿using System;
-using InterLab.API.Persistence.Contexts;
+using InterLab.API.Domain.Persistence.Contexts;
 
 namespace InterLab.API.Persistence.Repositories
 {
