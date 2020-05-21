@@ -46,11 +46,6 @@ namespace InterLab.API.Persistence.Contexts
                 .WithOne(p => p.Company).HasForeignKey(p => p.CompanyId);
             //Missing relationship with Workers_Companies
 
-            builder.Entity<Company>().HasData
-                (
-                new Company { Id = 100, Name = "InterLab" ,Description = "Xd", Sector = "2", Mail = "WaposStuidios.com",
-                Phone_Number = "123456789", Address = "CERRO DE CALIXTO", City = "SJM", Country = "Perú"}      
-                );
 
             //2. Document Entity
             builder.Entity<Document>().ToTable("Documents");
@@ -90,10 +85,11 @@ namespace InterLab.API.Persistence.Contexts
             // 5. Profile Entity
             builder.Entity<Profile>().ToTable("Profiles");
             builder.Entity<Profile>().HasKey(p => p.Id);
-            builder.Entity<Profile>().Property(p => p.Field).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Profile>().Property(p => p.semester).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Profile>().Property(P => P.Degree).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Profile>().Property(p => p.Description).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Profile>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Profile>().Property(p => p.Field).IsRequired();
+            builder.Entity<Profile>().Property(p => p.semester).IsRequired();
+            builder.Entity<Profile>().Property(P => P.Degree).IsRequired();
+            builder.Entity<Profile>().Property(p => p.Description).IsRequired();
             
  
             
