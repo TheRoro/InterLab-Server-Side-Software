@@ -18,7 +18,7 @@ namespace InterLab.API.Domain.Models
 
         //Relationships
 
-        public IList<Profile> Profile { get; set; } = new List<Profile>();
+        public Requirement Requirement { get; set; }
 
         //public IList<Roles_Processes> Roles_Processes { get; set; } = new List<Roles_Processes>();
 
