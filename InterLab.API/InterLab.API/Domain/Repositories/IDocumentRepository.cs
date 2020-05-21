@@ -10,8 +10,12 @@ namespace InterLab.API.Domain.Repositories
     {
         //get All
         Task<IEnumerable<Document>> ListAsync();
-        //get By UserId
-        //Task<IEnumerable<Document>> ListByUserIdAsync(int userId);
+        //getlBy Document
+        Task<Document> FindById(int id);
+        //getByStudentId and DocumentId
+        Task<Document> FindByStudentIdAndDocumentIdAsynd(int studentId, int documentId);
+        //get By StudentId
+        Task<IEnumerable<Document>> ListByStudentId(int studentId);
         //Add
         Task AddAsync(Document document);
         //Delete
