@@ -9,13 +9,15 @@ namespace InterLab.API.Domain.Models
     {
         public int Id { get; set; }
         public string State { get; set; }
-        public DateTime DateSend { get; set; } 
+        public DateTime CreationDate { get; set; }
 
+        //Relationships:
 
-        //Relation con internship y con student
-        public int UserId { get; set; } 
+        //One to Many with Student
+        public int StudentId { get; set; }
         public Student Student { get; set; }
 
+        //One to Many with Internship
         public int InternshipId { get; set; }
         public Internship Internship { get; set; }
 
