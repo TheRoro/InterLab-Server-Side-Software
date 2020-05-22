@@ -260,3 +260,4 @@ E:\UPC\CICLO V\Web\BACKEND C#\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\
 E:\UPC\CICLO V\Web\BACKEND C#\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.dll
 E:\UPC\CICLO V\Web\BACKEND C#\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.pdb
 E:\UPC\CICLO V\Web\BACKEND C#\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.genruntimeconfig.cache
+C:\Users\PCMYM\Source\Repos\8rb\InterLab-Server-Side-Software\InterLab.API\InterLab.API\obj\Debug\netcoreapp3.1\InterLab.API.csprojAssemblyReference.cache
