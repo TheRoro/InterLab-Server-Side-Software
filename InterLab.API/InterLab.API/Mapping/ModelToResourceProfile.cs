@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Profile = InterLab.API.Domain.Models.Profile;
 
 namespace InterLab.API.Mapping
 {
@@ -15,6 +16,7 @@ namespace InterLab.API.Mapping
             CreateMap<Student, StudentResource>();
             CreateMap<Company, CompanyResource>();
             CreateMap<Internship, InternshipResource>();
+            CreateMap<Profile, ProfileResource>();
         }
     }
 }

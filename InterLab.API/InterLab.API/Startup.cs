@@ -45,16 +45,19 @@ namespace InterLab.API
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IStudentService, StudentService>();
-            
 
-            services.AddAutoMapper(typeof(Startup));
-
+            services.AddScoped<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IProfileService, ProfileService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+;            
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InterLab API", Version = "v1" });
             });
+
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
