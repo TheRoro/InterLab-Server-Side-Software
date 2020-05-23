@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using InterLab.API.Domain.Models;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using InterLab.API.Extensions;
 
 namespace InterLab.API.Domain.Persistence.Contexts
 {
@@ -248,6 +249,8 @@ namespace InterLab.API.Domain.Persistence.Contexts
 
 
             //Missing SnakeCaseExtension
+            builder.ApplySnakeCaseNamingConvention();
+
         }
     }
 }
