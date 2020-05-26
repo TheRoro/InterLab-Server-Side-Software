@@ -16,9 +16,9 @@ namespace InterLab.API.Domain.Persistence.Contexts
         public DbSet<Qualification> Qualifications { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Requirement> Requirements { get; set; }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Worker> Workers { get; set; }
-        public DbSet<WorkerCompany> WorkerCompanies { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserCompany> UserCompanies { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -43,6 +43,10 @@ namespace InterLab.API.Domain.Persistence.Contexts
 
             //One to many with Qualifications
             builder.Entity<Company>().HasMany(p => p.Qualifications)
+                .WithOne(p => p.Company);
+
+            //One to many with Internships
+            builder.Entity<Company>().HasMany(p => p.Internships)
                 .WithOne(p => p.Company).HasForeignKey(p => p.CompanyId);
 
             //Many to Many with Worker
@@ -86,8 +90,8 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Internship>().HasMany(p => p.Requests)
                 .WithOne(p => p.Internship).HasForeignKey(p => p.InternshipId);
 
-            //One to Many with Worker
-            //Already in Worker Relationship
+            //One to Many with Company
+            //Already in Company Relationship
 
 
 
@@ -95,6 +99,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Profile>().ToTable("Profiles");
             builder.Entity<Profile>().HasKey(p => p.Id);
             builder.Entity<Profile>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Profile>().Property(p => p.Role).IsRequired();
             builder.Entity<Profile>().Property(p => p.FirstName).IsRequired();
             builder.Entity<Profile>().Property(p => p.LastName).IsRequired();
             builder.Entity<Profile>().Property(p => p.Field).IsRequired();
@@ -109,11 +114,8 @@ namespace InterLab.API.Domain.Persistence.Contexts
 
             //Relationships:
 
-            //One to one with Student
-            //Already in Student Relationship
-
-            //One to one with Worker
-            //Already in Worker Relationship
+            //One to one with User
+            //Already in User Relationship
 
 
 
@@ -123,11 +125,12 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Qualification>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Qualification>().Property(p => p.Comment).IsRequired().HasMaxLength(50);
             builder.Entity<Qualification>().Property(p => p.Score).IsRequired().HasMaxLength(10);
+            builder.Entity<Qualification>().Property(p => p.Author).IsRequired().HasMaxLength(8);
 
             //Relationships:
 
-            //One to one with Student
-            //Already in Student Relationship
+            //One to one with User
+            //Already in User Relationship
 
             //One to one with Company
             //Already in Company Relationship
@@ -143,8 +146,8 @@ namespace InterLab.API.Domain.Persistence.Contexts
 
             //Relationships:
 
-            //One to one with Student
-            //Already in Student Relationship
+            //One to one with User
+            //Already in User Relationship
 
             //One to one with Internship
             //Already in Internship Relationship
@@ -166,85 +169,64 @@ namespace InterLab.API.Domain.Persistence.Contexts
             //Already in Internship
 
 
-            //Student Entity
-            builder.Entity<Student>().ToTable("Students");
-            builder.Entity<Student>().HasKey(p => p.Id);
-            builder.Entity<Student>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Student>().Property(p => p.Username).IsRequired().HasMaxLength(10);
-            builder.Entity<Student>().Property(p => p.Email).IsRequired().HasMaxLength(10);
-            builder.Entity<Student>().Property(p => p.Password).IsRequired().HasMaxLength(10);
-            builder.Entity<Student>().Property(p => p.DateCreated).IsRequired().HasMaxLength(10);
+            //User Entity
+            builder.Entity<User>().ToTable("Users");
+            builder.Entity<User>().HasKey(p => p.Id);
+            builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<User>().Property(p => p.Username).IsRequired().HasMaxLength(10);
+            builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(10);
+            builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(10);
+            builder.Entity<User>().Property(p => p.DateCreated).IsRequired().HasMaxLength(10);
 
-            //Relationships:
+            //Relationships Student:
 
             //One to many with Document
-            builder.Entity<Student>()
+            builder.Entity<User>()
             .HasMany(d => d.Documents)
-            .WithOne(d => d.Student)
-            .HasForeignKey(d => d.StudentId);
+            .WithOne(d => d.User)
+            .HasForeignKey(d => d.UserId);
 
             //One to many with Request
-            builder.Entity<Student>()
+            builder.Entity<User>()
             .HasMany(r => r.Requests)
-            .WithOne(r => r.Student)
-            .HasForeignKey(r => r.StudentId);
+            .WithOne(r => r.User)
+            .HasForeignKey(r => r.UserId);
 
             //One to many with Qualification
-            builder.Entity<Student>()
+            builder.Entity<User>()
             .HasMany(q => q.Qualifications)
-            .WithOne(q => q.Student)
-            .HasForeignKey(q => q.StudentId);
+            .WithOne(q => q.User);
 
             //One to one with Profile
-            builder.Entity<Student>().HasOne(p => p.Profile)
-            .WithOne(p => p.Student)
-            .HasForeignKey<Profile>(p => p.StudentId);
+            builder.Entity<User>().HasOne(p => p.Profile)
+            .WithOne(p => p.User)
+            .HasForeignKey<Profile>(p => p.UserId);
+
+
+            //Relationships Company:
+
+            //Many to Many with User
+            //Already in UserCompany Relationship
 
 
 
-            //Worker Entity
-            builder.Entity<Worker>().ToTable("Workers");
-            builder.Entity<Worker>().HasKey(p => p.Id);
-            builder.Entity<Worker>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Worker>().Property(p => p.Username).IsRequired().HasMaxLength(10);
-            builder.Entity<Worker>().Property(p => p.Email).IsRequired().HasMaxLength(10);
-            builder.Entity<Worker>().Property(p => p.Password).IsRequired().HasMaxLength(10);
-            builder.Entity<Worker>().Property(p => p.DateCreated).IsRequired().HasMaxLength(10);
-            builder.Entity<Worker>().Property(p => p.Type).IsRequired().HasMaxLength(10);
+            //UserCompany Entity
+            builder.Entity<UserCompany>().ToTable("UserCompanies");
+            builder.Entity<UserCompany>()
+            .HasKey(wc => new { wc.UserId, wc.CompanyId });
 
             //Relationships:
 
-            //One to many with Internship
-            builder.Entity<Worker>()
-            .HasMany(i => i.Internships)
-            .WithOne(i => i.Worker)
-            .HasForeignKey(i => i.WorkerId);
-
-            //One to one with Profile
-            builder.Entity<Worker>().HasOne(p => p.Profile)
-            .WithOne(p => p.Worker)
-            .HasForeignKey<Profile>(p => p.WorkerId);
-
-            //Many to Many with Worker
-            //Already in WorkerCompany Relationship
-
-            //WorkerCompany Entity
-            builder.Entity<WorkerCompany>().ToTable("WorkerCompanies");
-            builder.Entity<WorkerCompany>()
-            .HasKey(wc => new { wc.WorkerId, wc.CompanyId });
-
-            //Relationships:
-
-            //One to many with Worker
-            builder.Entity<WorkerCompany>()
-                .HasOne(wc => wc.Worker)
-                .WithMany(w => w.WorkerCompanies)
-                .HasForeignKey(wc => wc.WorkerId);
+            //One to many with User
+            builder.Entity<UserCompany>()
+                .HasOne(wc => wc.User)
+                .WithMany(w => w.UserCompanies)
+                .HasForeignKey(wc => wc.UserId);
 
             //One to many with Company
-            builder.Entity<WorkerCompany>()
+            builder.Entity<UserCompany>()
                 .HasOne(wc => wc.Company)
-                .WithMany(c => c.WorkerCompanies)
+                .WithMany(c => c.UserCompanies)
                 .HasForeignKey(wc => wc.CompanyId);
 
 

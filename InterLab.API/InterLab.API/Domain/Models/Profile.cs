@@ -8,6 +8,7 @@ namespace InterLab.API.Domain.Models
     public class Profile
     {
         public int Id { get; set; }
+        public string Role { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Field { get; set; }
@@ -22,12 +23,10 @@ namespace InterLab.API.Domain.Models
         public int Semester { get; set; }
 
         //Relationships:
-        //One to One with Student
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
-        //One to One With Worker
-        public int WorkerId { get; set; }
-        public Worker Worker { get; set; }
+        //One to One with User
+        public int UserId { get; set; }
+        public User User { get; set; }
+
 
     }
 }

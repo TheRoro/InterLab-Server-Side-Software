@@ -24,7 +24,10 @@ namespace InterLab.API.Domain.Models
         //One to many with Qualifications
         public IList<Qualification> Qualifications { get; set; } = new List<Qualification>();
 
-        //Many to Many with Worker
-        public List<WorkerCompany> WorkerCompanies { get; set; }
+        //Many to Many with User
+        public List<UserCompany> UserCompanies { get; set; }
+
+        //One To Many with Internship
+        public IList<Internship> Internships { get; set; } = new List<Internship>();
     }
 }

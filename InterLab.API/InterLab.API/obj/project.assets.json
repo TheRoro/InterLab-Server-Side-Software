@@ -6776,19 +6776,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PCMYM\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+      "projectUniqueName": "E:\\UPC\\CICLO V\\Web\\Backend CiShar\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
       "projectName": "InterLab.API",
-      "projectPath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
-      "packagesPath": "C:\\Users\\PCMYM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PCMYM\\Source\\Repos\\8rb\\InterLab-Server-Side-Software\\InterLab.API\\InterLab.API\\obj\\",
+      "projectPath": "E:\\UPC\\CICLO V\\Web\\Backend CiShar\\InterLab.API\\InterLab.API\\InterLab.API.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "E:\\UPC\\CICLO V\\Web\\Backend CiShar\\InterLab.API\\InterLab.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PCMYM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

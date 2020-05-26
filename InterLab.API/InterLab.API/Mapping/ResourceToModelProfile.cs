@@ -12,7 +12,7 @@ namespace InterLab.API.Mapping
     {
         public ResourceToModelProfile()
         {
-            CreateMap<SaveStudentResource, Student>();
+            CreateMap<SaveUserResource, User>();
             CreateMap<SaveProfileResource, Domain.Models.Profile>();
             //duda para Company;
         }
