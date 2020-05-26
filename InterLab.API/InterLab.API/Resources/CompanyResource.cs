@@ -11,8 +11,11 @@ namespace InterLab.API.Resources
         public string Name { get; set; }
         public string Description { get; set; }
         public string Sector { get; set; }
-        public string Mail { get; set; }
-        public string Phone_Number { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
 
     }
 }
