@@ -25,8 +25,8 @@ namespace InterLab.API.Domain.Models
         public IList<Request> Requests { get; set; } = new List<Request>();
 
         //One to Many with Worker
-        public int WorkerId { get; set; }
-        public Worker Worker { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
 
     }
 }

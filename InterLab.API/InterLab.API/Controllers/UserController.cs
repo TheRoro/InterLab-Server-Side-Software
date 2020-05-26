@@ -12,23 +12,23 @@ using InterLab.API.Resources;
 namespace InterLab.API.Controllers
 {
     [Route("/api/[controller]")]
-    public class StudentsController : Controller
+    public class UserController : Controller
     {
-        private readonly IStudentService _studentService;   
+        private readonly IUserService _userService;   
         private readonly IMapper _mapper; 
 
 
-        public StudentsController(IStudentService studentService, IMapper mapper)
+        public UserController(IUserService userService, IMapper mapper)
         {
-            _studentService = studentService;
+            _userService = userService;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<StudentResource>> GetAllAsync()
+        public async Task<IEnumerable<UserResource>> GetAllAsync()
         {
-            var students = await _studentService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Student>, IEnumerable<StudentResource>>(students);
+            var users = await _userService.ListAsync();
+            var resources = _mapper.Map<IEnumerable<User>, IEnumerable<UserResource>>(users);
             return resources;
         }
 

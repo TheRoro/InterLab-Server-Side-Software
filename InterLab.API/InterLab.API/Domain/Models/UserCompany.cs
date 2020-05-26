@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Domain.Models
 {
-    public class WorkerCompany //Many to Many Table
+    public class UserCompany //Many to Many Table
     {
-        //One to Many with Worker
-        public int WorkerId { get; set; }
-        public Worker Worker { get; set; }
+        //One to Many with User
+        public int UserId { get; set; }
+        public User User { get; set; }
 
         //One to Many with Company
         public int CompanyId { get; set; }
