@@ -23,21 +23,21 @@ namespace InterLab.API.Persistence.Repositories
             return await _context.Documents.FindAsync(id);
         }
 
-        public async Task<Document> FindByStudentIdAndDocumentIdAsynd(int studentId, int documentId)
+       /* public async Task<Document> FindByStudentIdAndDocumentIdAsynd(int studentId, int documentId)
         {
             return await _context.Documents.FindAsync(studentId, documentId);
-        }
+        }*/
 
         public async Task<IEnumerable<Document>> ListAsync()
         {
             return await _context.Documents.ToListAsync();
         }
 
-        public async Task<IEnumerable<Document>> ListByStudentId(int studentId) =>
-            await _context.Documents
-            .Where(p => p.StudentId == studentId)
-            .Include(p => p.Student)
-            .ToListAsync();
+        //public async Task<IEnumerable<Document>> ListByStudentId(int studentId) =>
+        //    await _context.Documents
+        //    .Where(p => p.StudentId == studentId)
+        //    .Include(p => p.Student)
+        //    .ToListAsync();
 
 
         public void Remove(Document document)

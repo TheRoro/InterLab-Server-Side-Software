@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Services
 {
-    public class StudentService : IStudentService
+    public class UserService : IUserService
     {
 
-        private readonly IStudentRepository _studentRepository;
+        private readonly IUserRepository _userRepository;
 
-        public StudentService(IStudentRepository studentRepository)
+        public UserService(IUserRepository userRepository)
         {
-            _studentRepository = studentRepository;
+            _userRepository = userRepository;
         }
 
-        public async Task<IEnumerable<Student>> ListAsync()
+        public async Task<IEnumerable<User>> ListAsync()
         {
-            return await _studentRepository.ListAsync();
+            return await _userRepository.ListAsync();
         }
     }
 }

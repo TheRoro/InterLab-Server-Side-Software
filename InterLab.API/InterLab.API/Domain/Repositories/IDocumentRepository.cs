@@ -13,9 +13,9 @@ namespace InterLab.API.Domain.Repositories
         //getlBy Document
         Task<Document> FindById(int id);
         //getByStudentId and DocumentId
-        Task<Document> FindByStudentIdAndDocumentIdAsynd(int studentId, int documentId);
+        //Task<Document> FindByStudentIdAndDocumentIdAsynd(int studentId, int documentId);
         //get By StudentId
-        Task<IEnumerable<Document>> ListByStudentId(int studentId);
+        //Task<IEnumerable<Document>> ListByStudentId(int studentId);
         //Add
         Task AddAsync(Document document);
         //Delete

@@ -11,6 +11,8 @@ namespace InterLab.API.Resources
         [Required]
         public string FirstName { get; set; }
         [Required]
+        public string Role { get; set; }
+        [Required]
         public string LastName { get; set; }
         [Required]
         public string Field { get; set; }
@@ -22,13 +24,10 @@ namespace InterLab.API.Resources
         public string Country { get; set; }
         [Required]
         public string City { get; set; }
-        [Required]
 
         //Only Student Properties
         public string University { get; set; }
-        [Required]
         public string Degree { get; set; }
-        [Required]
         public int Semester { get; set; }
     }
 }

@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Domain.Models
 {
-    public class Student
+    public class User
     {
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public DateTime DateCreated { get; set; }
-        //Relationships:
+
+        //Relations Student
 
         //One to many with Document
         public IList<Document> Documents { get; set; } = new List<Document>();
@@ -26,6 +27,10 @@ namespace InterLab.API.Domain.Models
         //One to one with Profile
         public Profile Profile { get; set; }
 
-    }
+        //Relations Worker
 
+        //Many to Many with Company
+        public List<UserCompany> UserCompanies { get; set; }
+
+    }
 }
