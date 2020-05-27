@@ -8,14 +8,12 @@ namespace InterLab.API.Domain.Repositories
 {
     public interface IDocumentRepository
     {
-        //get All
-        Task<IEnumerable<Document>> ListAsync();
-        //getlBy Document
+        //get By UserId
+        Task<IEnumerable<Document>> ListByUserId(int userId);
+        //getlBy DocumentId
         Task<Document> FindById(int id);
-        //getByStudentId and DocumentId
-        //Task<Document> FindByStudentIdAndDocumentIdAsynd(int studentId, int documentId);
-        //get By StudentId
-        //Task<IEnumerable<Document>> ListByStudentId(int studentId);
+        //getByUserd and DocumentId
+        Task<Document> FindByUserIdAndDocumentIdAsynd(int userId, int Id);
         //Add
         Task AddAsync(Document document);
         //Delete
