@@ -13,10 +13,15 @@ namespace InterLab.API.Mapping
     {
         public ModelToResourceProfile()
         {
-            CreateMap<User, UserResource>();
             CreateMap<Company, CompanyResource>();
+            CreateMap<Document, DocumentResource>();
             CreateMap<Internship, InternshipResource>();
             CreateMap<Profile, ProfileResource>();
+            //CreateMap<Qualification, QualificationResource>();
+            //CreateMap<Request, RequestResource>();
+            CreateMap<Requirement, RequirementResource>();
+            CreateMap<User, UserResource>();
+            //CreateMap<UserCompany, UserCompanyResource>();
         }
     }
 }
