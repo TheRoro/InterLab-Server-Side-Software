@@ -23,38 +23,24 @@ namespace InterLab.API.Persistence.Repositories
             return await _context.Profiles.FindAsync(id);
         }
 
-        public async Task<Profile> FindByStudentIdAndProfileIdAsync(int studentId, int profileId)
+        public async Task<Profile> FindByUserIdAndProfileIdAsync(int userId, int profileId) 
         {
-            return await _context.Profiles.FindAsync(studentId, profileId);
+            return await _context.Profiles.FindAsync(userId, profileId);
         }
 
-        public async Task<Profile> FindByWorkerIdAndProfileIdAsync(int workerId, int profileId)
-        {
-            return await _context.Profiles.FindAsync(workerId, profileId);
-        }
 
         public async Task<IEnumerable<Profile>> ListAsync()
         {
             return await _context.Profiles.ToListAsync();
         }
 
-        //public async Task<IEnumerable<Profile>> ListByStudentId(int studentId) =>
+        //public async Task<IEnumerable<Profile>> ListByUserId(int userId) =>
 
         //    await _context.Profiles
-        //    .Where(p => p.StudentId == studentId)
-        //    .Include(p => p.Student)
-        //    .ToListAsync();
-   
-
-        //public async Task<IEnumerable<Profile>> ListByWorkerId(int workerId) =>
+        //    .Where(p => p.UserId == userId)
+        //    .Include(p => p.User)
+        //    .ToListAsync();  
         
-        //    await _context.Profiles
-        //    .Where(p => p.WorkerId == workerId)
-        //    .Include(p => p.Worker)
-        //    .ToListAsync();
-        
-       
-
         public void Remove(Profile profile)
         {
             _context.Profiles.Remove(profile);

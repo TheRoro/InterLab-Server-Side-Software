@@ -8,17 +8,22 @@ namespace InterLab.API.Resources
 {
     public class SaveProfileResource
     {
-        [Required]
-        public string FirstName { get; set; }
+
         [Required]
         public string Role { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
         [Required]
         public string LastName { get; set; }
         [Required]
+
         public string Field { get; set; }
         [Required]
         public string Phone { get; set; }
         [Required]
+        
         public string Description { get; set; }
         [Required]
         public string Country { get; set; }
@@ -26,9 +31,13 @@ namespace InterLab.API.Resources
         public string City { get; set; }
 
         //Only Student Properties
+        [Required]
         public string University { get; set; }
+        [Required]
         public string Degree { get; set; }
+        [Required]
         public int Semester { get; set; }
+
     }
 }
 
