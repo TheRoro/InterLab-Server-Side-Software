@@ -42,16 +42,34 @@ namespace InterLab.API
                 options.UseMySQL("server=localhost;database=interlab_c#;user=root;password=omar2702");
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+
+            services.AddScoped<IDocumentService, DocumentService>();
+            services.AddScoped<IDocumentRepository, DocumentRepository>();
+
+            services.AddScoped<IInternshipService, InternshipService>();
+            services.AddScoped<IInternshipRepository, InternshipRepository>();
+
+            services.AddScoped<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IProfileService, ProfileService>();
+;
+            //services.AddScoped<IQualificationRepository, QualificationRepository>();
+            services.AddScoped<IQualificationService, QualificationService>();
+
+            //services.AddScoped<IRequestRepository, RequestRepository>();
+            services.AddScoped<IRequestService, RequestService>();
+
+            services.AddScoped<IRequirementRepository, RequirementRepository>();
+            services.AddScoped<IRequirementService, RequirementService>();
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
 
-            services.AddScoped<IProfileRepository, ProfileRepository>();
-            services.AddScoped<IProfileService, ProfileService>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-;            
-            services.AddScoped<ICompanyService, CompanyService>();
-            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            //services.AddScoped<IUserCompanyRepository, UserCompanyRepository>();
+            //services.AddScoped<IUserCompanyService, UserCompanyService>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InterLab API", Version = "v1" });
