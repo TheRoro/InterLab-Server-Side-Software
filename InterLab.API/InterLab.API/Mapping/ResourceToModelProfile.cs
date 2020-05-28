@@ -16,7 +16,7 @@ namespace InterLab.API.Mapping
             CreateMap<SaveDocumentResource, Document>();
             CreateMap<SaveInternshipResource, Internship>();
             CreateMap<SaveProfileResource, Domain.Models.Profile>();
-            //CreateMap<SaveQualificationResource, Qualification>();
+            CreateMap<SaveQualificationResource, Qualification>();
             CreateMap<SaveRequestResource, Request>();
             CreateMap<SaveRequirementResource, Requirement>();
             CreateMap<SaveUserResource, User>();
