@@ -12,8 +12,7 @@ namespace InterLab.API.Domain.Services
         //get All
         Task<IEnumerable<Profile>> ListAsync();
 
-        ////get By UserId
-        //Task<IEnumerable<Profile>> ListByUserId(int userId);
+        Task<IEnumerable<Profile>> ListByUserId(int userId);
 
 
         //getByUserId and ProfileId
