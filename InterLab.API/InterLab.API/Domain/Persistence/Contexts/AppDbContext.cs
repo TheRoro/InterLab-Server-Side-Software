@@ -124,7 +124,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Qualification>().HasKey(p => p.Id);
             builder.Entity<Qualification>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Qualification>().Property(p => p.Comment).IsRequired().HasMaxLength(50);
-            builder.Entity<Qualification>().Property(p => p.Score).IsRequired().HasMaxLength(10);
+            builder.Entity<Qualification>().Property(p => p.Score).IsRequired();
             builder.Entity<Qualification>().Property(p => p.Author).IsRequired().HasMaxLength(8);
 
             //Relationships:

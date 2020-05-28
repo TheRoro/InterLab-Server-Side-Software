@@ -17,7 +17,7 @@ namespace InterLab.API.Mapping
             CreateMap<Document, DocumentResource>();
             CreateMap<Internship, InternshipResource>();
             CreateMap<Profile, ProfileResource>();
-            //CreateMap<Qualification, QualificationResource>();
+            CreateMap<Qualification, QualificationResource>();
             CreateMap<Request, RequestResource>();
             CreateMap<Requirement, RequirementResource>();
             CreateMap<User, UserResource>();
