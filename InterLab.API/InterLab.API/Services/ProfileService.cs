@@ -102,9 +102,9 @@ namespace InterLab.API.Services
             throw new NotImplementedException();
         }
 
-        //public async Task<IEnumerable<Profile>> ListByUserId(int userId)
-        //{
-        //    return await _profileRepository.ListByUserId(userId);
-        //}
+        public async Task<IEnumerable<Profile>> ListByUserId(int userId)
+        {
+            return await _profileRepository.ListByUserId(userId);
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace InterLab.API.Domain.Repositories
         //get All
         Task<IEnumerable<Profile>> ListAsync();
 
+        Task<IEnumerable<Profile>> ListByUserId(int userId);
+
         //getBy Profile
         Task<Profile> FindById(int id);
 
