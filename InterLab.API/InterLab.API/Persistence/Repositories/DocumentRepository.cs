@@ -23,9 +23,9 @@ namespace InterLab.API.Persistence.Repositories
             return await _context.Documents.FindAsync(id);
         }
 
-        public async Task<Document> FindByUserIdAndDocumentIdAsynd(int userId, int id)
+        public async Task<Document> FindByUserIdAndDocumentIdAsync(int userId, int id)
         {
-            return await _context.Documents.FindAsync(id, userId);
+            return await _context.Documents.FindAsync(userId, id);
         }
 
         public async Task<IEnumerable<Document>> ListByUserId(int userId) =>
