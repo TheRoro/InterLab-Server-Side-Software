@@ -42,7 +42,7 @@ namespace InterLab.API.Persistence.Repositories
 
         public void Update(Requirement requirement)
         {
-            _context.Requirements.Remove(requirement);
+            _context.Requirements.Update(requirement);
         }
     }
 }
