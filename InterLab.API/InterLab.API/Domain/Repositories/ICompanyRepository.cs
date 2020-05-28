@@ -8,6 +8,10 @@ namespace InterLab.API.Domain.Repositories
 {
     public interface ICompanyRepository
     {
+        Task<Company> FindById(int id);
         Task<IEnumerable<Company>> ListAsync();
+        Task AddAsync(Company company);
+        void Remove(Company company);
+        void Update(Company company);
     }
 }
