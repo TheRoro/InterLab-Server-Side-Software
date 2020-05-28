@@ -39,9 +39,9 @@ namespace InterLab.API.Services
             }
         }
 
-        public async Task<DocumentResponse> GetByIdAndUserIdAsync(int id, int studentId)
+        public async Task<DocumentResponse> GetById(int id)
         {
-            var existingDocument = await _documentRepository.FindByUserIdAndDocumentIdAsynd(id, studentId);
+            var existingDocument = await _documentRepository.FindById(id);
 
             if (existingDocument == null)
                 return new DocumentResponse("Document not found");
