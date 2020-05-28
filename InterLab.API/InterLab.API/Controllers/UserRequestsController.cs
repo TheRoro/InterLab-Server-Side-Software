@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Services;
+using InterLab.API.Extensions;
 using InterLab.API.Resources;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace InterLab.API.Controllers
 {
     [Route("/api/users/{userId}/requests")]
-    public class UserRequestsController
+    public class UserRequestsController : Controller
     {
         private readonly IRequestService _requestService;
         private readonly IMapper _mapper;
@@ -23,13 +24,22 @@ namespace InterLab.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<RequestResource>> GetAllByUserIdAsync(int userId)
+        public async Task<IEnumerable<RequestResource>> GetAllByUserId(int userId)
         {
             var requests = await _requestService.ListByUserIdAsync(userId);
             var resources = _mapper
                 .Map<IEnumerable<Request>, IEnumerable<RequestResource>>(requests);
             return resources;
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetRequestByUserIdAsync(int id, int userId)
+        {
+            var result = await _requestService.GetByIdAndUserIdAsync(id, userId);
+            if (!result.Success)
+                return BadRequest(result.Message);
+            var requestResource = _mapper.Map<Request, RequestResource>(result.Resource);
+            return Ok(requestResource);
 
+        }
     }
 }
