@@ -31,9 +31,9 @@ namespace InterLab.API.Controllers
             return resources;
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetDocumentByUserIdAsync(int id, int userId)
+        public async Task<IActionResult> GetDocumentByIdAsync(int id)
         {
-            var result = await _documentService.GetByIdAndUserIdAsync(id, userId);
+            var result = await _documentService.GetById(id);
             if (!result.Success)
                 return BadRequest(result.Message);
             var documentResource = _mapper.Map<Document, DocumentResource>(result.Resource);
