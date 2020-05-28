@@ -51,7 +51,24 @@ namespace InterLab.API.Services
         {
             return await _requestRepository.ListAsync();
         }
+        public async Task<RequestResponse> GetByIdAndUserIdAsync(int id, int userId)
+        {
+            var existingRequest = await _requestRepository.FindByUserIdAndRequestIdAsync(id, userId);
 
+            if (existingRequest == null)
+                return new RequestResponse("Request not found");
+            return new RequestResponse(existingRequest);
+
+        }
+        public async Task<RequestResponse> GetByIdAndInternshipIdAsync(int id, int internshipId)
+        {
+            var existingRequest = await _requestRepository.FindByInternshipIdAndRequestIdAsync(id, internshipId);
+
+            if (existingRequest == null)
+                return new RequestResponse("Request not found");
+            return new RequestResponse(existingRequest);
+
+        }
         public async Task<IEnumerable<Request>> ListByInternshipIdAsync(int internshipId)
         {
             return await _requestRepository.ListByInternshipIdAsync(internshipId);
