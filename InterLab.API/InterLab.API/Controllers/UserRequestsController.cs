@@ -32,9 +32,9 @@ namespace InterLab.API.Controllers
             return resources;
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRequestByUserIdAsync(int id, int userId)
+        public async Task<IActionResult> GetRequestByIdAsync(int id)
         {
-            var result = await _requestService.GetByIdAndUserIdAsync(id, userId);
+            var result = await _requestService.GetByIdAsync(id);
             if (!result.Success)
                 return BadRequest(result.Message);
             var requestResource = _mapper.Map<Request, RequestResource>(result.Resource);
