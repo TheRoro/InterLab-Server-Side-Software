@@ -33,14 +33,14 @@ namespace InterLab.API.Persistence.Repositories
             return await _context.Profiles.ToListAsync();
         }
 
-        //public async Task<IEnumerable<Profile>> ListByUserId(int userId) =>
+        public async Task<IEnumerable<Profile>> ListByUserId(int userId) =>
 
-        //    await _context.Profiles
-        //    .Where(p => p.UserId == userId)
-        //    .Include(p => p.User)
-        //    .ToListAsync();
-   
-           
+            await _context.Profiles
+            .Where(p => p.UserId == userId)
+            .Include(p => p.User)
+            .ToListAsync();
+
+
         public void Remove(Profile profile)
         {
             _context.Profiles.Remove(profile);
