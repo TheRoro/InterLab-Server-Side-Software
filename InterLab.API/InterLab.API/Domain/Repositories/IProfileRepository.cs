@@ -14,18 +14,8 @@ namespace InterLab.API.Domain.Repositories
         //getBy Profile
         Task<Profile> FindById(int id);
 
-        ////get By StudentId
-        //Task<IEnumerable<Profile>> ListByStudentId(int studentId);
-
-        ////get By WorkerId
-        //Task<IEnumerable<Profile>> ListByWorkerId(int workerId);
-
-
         //getByStudentId and ProfileId
-        Task<Profile> FindByStudentIdAndProfileIdAsync(int studentId, int profileId); 
-
-        //getByWorkerId and ProfileId 
-        Task<Profile> FindByWorkerIdAndProfileIdAsync(int workerId, int profileId); 
+        Task<Profile> FindByUserIdAndProfileIdAsync(int userId, int profileId);   
 
 
         //Add
