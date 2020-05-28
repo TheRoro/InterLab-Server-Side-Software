@@ -37,8 +37,8 @@ namespace InterLab.API.Controllers
             var result = await _internshipService.GetByIdAsync(id);
             if (!result.Success)
                 return BadRequest(result.Message);
-            var intershipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
-            return Ok(intershipResource);
+            var internshipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
+            return Ok(internshipResource);
         }
 
         [HttpPost]
@@ -46,32 +46,20 @@ namespace InterLab.API.Controllers
         {
             if (ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-            var intership = _mapper.Map<SaveInternshipResource, Internship>(resource); 
-            var result = await _internshipService.SaveAsync(intership);
+            var internship = _mapper.Map<SaveInternshipResource, Internship>(resource); 
+            var result = await _internshipService.SaveAsync(internship);
 
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var intershipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
-            return Ok(intershipResource);
+            var internshipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
+            return Ok(internshipResource);
         }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
-        {
-            var result = await _internshipService.DeleteAsync(id);
-
-            if (!result.Success)
-                return BadRequest(result.Message);
-            var intershipResource = _mapper.Map<Internship, SaveInternshipResource>(result.Resource);
-            return Ok(intershipResource);
-        }
-
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveInternshipResource resource)
         {
-            var intership = _mapper.Map<SaveInternshipResource, Internship>(resource);
-            var result = await _internshipService.UpdateAsync(id, intership);
+            var internship = _mapper.Map<SaveInternshipResource, Internship>(resource);
+            var result = await _internshipService.UpdateAsync(id, internship);
 
             if (!result.Success)
                 return BadRequest(result.Message);
@@ -79,6 +67,16 @@ namespace InterLab.API.Controllers
             return Ok(internshipResource);
 
 
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var result = await _internshipService.DeleteAsync(id);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+            var internshipResource = _mapper.Map<Internship, SaveInternshipResource>(result.Resource);
+            return Ok(internshipResource);
         }
     }
 }

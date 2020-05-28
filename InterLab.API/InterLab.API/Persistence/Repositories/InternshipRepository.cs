@@ -13,41 +13,37 @@ namespace InterLab.API.Persistence.Repositories
     {
         public InternshipRepository(AppDbContext context) : base(context) { }
 
-        public async  Task AddAsync(Internship internship)
-        {
-            await _context.Internships.AddAsync(internship);
-        }
-
-        public async Task<Internship> FindByCompanyIdAndIntershipIdAsynd(int companyId, int Id)
-        {
-            return await _context.Internships.FindAsync(Id, companyId);
-        }
-
         public async Task<Internship> FindById(int id)
         {
             return await _context.Internships.FindAsync(id);
+        }
+        public async Task<Internship> FindByCompanyIdAndIntershipIdAsynd(int companyId, int id)
+        {
+            return await _context.Internships.FindAsync(id, companyId);
         }
 
         public async Task<IEnumerable<Internship>> ListAsync()
         {
             return await _context.Internships.ToListAsync();
         }
-
         public async Task<IEnumerable<Internship>> ListByCompanyIdAsync(int companyId) =>
              await _context.Internships
             .Where(p => p.CompanyId == companyId)
             .Include(p => p.Company)
             .ToListAsync();
 
+        public async Task AddAsync(Internship internship)
+        {
+            await _context.Internships.AddAsync(internship);
+        }
+        public void Update(Internship internship)
+        {
+            _context.Internships.Update(internship);
+        }
 
         public void Remove(Internship internship)
         {
             _context.Internships.Remove(internship);
-        }
-
-        public void Update(Internship internship)
-        {
-            _context.Internships.Update(internship);
         }
     }
 }

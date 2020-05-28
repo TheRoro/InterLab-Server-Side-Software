@@ -24,7 +24,7 @@ namespace InterLab.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<RequirementResource>> GetAllByInternshipIdAsync(int internshipId)
+        public async Task<IEnumerable<RequirementResource>> GetByInternshipIdAsync(int internshipId)
         {
             var requirements = await _requirementService.ListByInternshipIdAsync(internshipId);
             var resources = _mapper

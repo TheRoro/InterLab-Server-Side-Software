@@ -12,21 +12,15 @@ namespace InterLab.API.Persistence.Repositories
     public class RequestRepository : BaseRepository, IRequestRepository
     {
         public RequestRepository(AppDbContext context) : base(context) { }
-        public async Task AddAsync(Request request)
-        {
-            await _context.Requests.AddAsync(request);
-        }
 
         public async Task<Request> FindByIdAsync(int id)
         {
             return await _context.Requests.FindAsync(id);
         }
-
         public async Task<Request> FindByInternshipIdAndRequestIdAsync(int internshipId, int id)
         {
             return await _context.Requests.FindAsync(id, internshipId);
         }
-
         public async Task<Request> FindByUserIdAndRequestIdAsync(int userId, int id)
         {
             return await _context.Requests.FindAsync(id, userId);
@@ -36,7 +30,6 @@ namespace InterLab.API.Persistence.Repositories
         {
             return await _context.Requests.ToListAsync();
         }
-
         public async Task<IEnumerable<Request>> ListByInternshipIdAsync(int internshipId) =>
             await _context.Requests
             .Where(r => r.InternshipId == internshipId)
@@ -49,14 +42,17 @@ namespace InterLab.API.Persistence.Repositories
             .Include(r => r.User)
             .ToListAsync();
 
-        public void Remove(Request request)
+        public async Task AddAsync(Request request)
         {
-            _context.Requests.Remove(request);
+            await _context.Requests.AddAsync(request);
         }
-
         public void Update(Request request)
         {
             _context.Requests.Update(request);
+        }
+        public void Remove(Request request)
+        {
+            _context.Requests.Remove(request);
         }
     }
 }
