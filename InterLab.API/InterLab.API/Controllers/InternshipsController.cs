@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("/api/companies/{companyId}/internships")]
     public class InternshipsController : Controller
     {
         private readonly IInternshipService _internshipService;
@@ -21,24 +21,6 @@ namespace InterLab.API.Controllers
         {
             _internshipService = internshipService;
             _mapper = mapper;
-        }
-
-        [HttpGet]
-        public async Task<IEnumerable<InternshipResource>> GetAllAsync()
-        {
-            var internships = await _internshipService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Internship>, IEnumerable<InternshipResource>>(internships);
-            return resources;
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetAsync(int id)
-        {
-            var result = await _internshipService.GetByIdAsync(id);
-            if (!result.Success)
-                return BadRequest(result.Message);
-            var internshipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
-            return Ok(internshipResource);
         }
 
         [HttpPost]
