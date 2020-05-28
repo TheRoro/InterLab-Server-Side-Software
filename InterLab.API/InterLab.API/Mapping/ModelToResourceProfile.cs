@@ -21,7 +21,6 @@ namespace InterLab.API.Mapping
             CreateMap<Request, RequestResource>();
             CreateMap<Requirement, RequirementResource>();
             CreateMap<User, UserResource>();
-            //CreateMap<UserCompany, UserCompanyResource>();
         }
     }
 }
