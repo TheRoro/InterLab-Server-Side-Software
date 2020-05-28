@@ -18,25 +18,6 @@ namespace InterLab.API.Services
             _requestRepository = requestRepository;
             _unitOfWork = unitOfWork;
         }
-        public async Task<RequestResponse> DeleteAsync(int id)
-        {
-            var existingRequest = await _requestRepository.FindByIdAsync(id);
-
-            if (existingRequest == null)
-                return new RequestResponse("Request not found");
-
-            try
-            {
-                _requestRepository.Remove(existingRequest);
-                await _unitOfWork.CompleteAsync();
-
-                return new RequestResponse(existingRequest);
-            }
-            catch (Exception ex)
-            {
-                return new RequestResponse($"An error ocurred while deleting request: {ex.Message}");
-            }
-        }
 
         public async Task<RequestResponse> GetByIdAsync(int id)
         {
@@ -45,11 +26,6 @@ namespace InterLab.API.Services
             if (existingRequest == null)
                 return new RequestResponse("Request not found");
             return new RequestResponse(existingRequest);
-        }
-
-        public async Task<IEnumerable<Request>> ListAsync()
-        {
-            return await _requestRepository.ListAsync();
         }
         public async Task<RequestResponse> GetByIdAndUserIdAsync(int id, int userId)
         {
@@ -69,6 +45,12 @@ namespace InterLab.API.Services
             return new RequestResponse(existingRequest);
 
         }
+
+        public async Task<IEnumerable<Request>> ListAsync()
+        {
+            return await _requestRepository.ListAsync();
+        }
+
         public async Task<IEnumerable<Request>> ListByInternshipIdAsync(int internshipId)
         {
             return await _requestRepository.ListByInternshipIdAsync(internshipId);
@@ -93,7 +75,6 @@ namespace InterLab.API.Services
                 return new RequestResponse($"An error ocurred while saving the request: {ex.Message}");
             }
         }
-
         public async Task<RequestResponse> UpdateAsync(int id, Request request)
         {
             var existingRequest = await _requestRepository.FindByIdAsync(id);
@@ -114,6 +95,25 @@ namespace InterLab.API.Services
             catch (Exception ex)
             {
                 return new RequestResponse($"An error ocurred while updating request: {ex.Message}");
+            }
+        }
+        public async Task<RequestResponse> DeleteAsync(int id)
+        {
+            var existingRequest = await _requestRepository.FindByIdAsync(id);
+
+            if (existingRequest == null)
+                return new RequestResponse("Request not found");
+
+            try
+            {
+                _requestRepository.Remove(existingRequest);
+                await _unitOfWork.CompleteAsync();
+
+                return new RequestResponse(existingRequest);
+            }
+            catch (Exception ex)
+            {
+                return new RequestResponse($"An error ocurred while deleting request: {ex.Message}");
             }
         }
     }
