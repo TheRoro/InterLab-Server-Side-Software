@@ -30,6 +30,14 @@ namespace InterLab.API.Controllers
             return resources;
         }
 
-
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAsync(int id)
+        {
+            var result = await _companyService.GetById(id);
+            if (!result.Success)
+                return BadRequest(result.Message);
+            var profileResource = _mapper.Map<Company, CompanyResource>(result.Resource);
+            return Ok(profileResource);
+        }
     }
 }
