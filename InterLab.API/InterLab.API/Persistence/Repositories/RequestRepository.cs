@@ -22,6 +22,16 @@ namespace InterLab.API.Persistence.Repositories
             return await _context.Requests.FindAsync(id);
         }
 
+        public async Task<Request> FindByInternshipIdAndRequestIdAsync(int internshipId, int id)
+        {
+            return await _context.Requests.FindAsync(id, internshipId);
+        }
+
+        public async Task<Request> FindByUserIdAndRequestIdAsync(int userId, int id)
+        {
+            return await _context.Requests.FindAsync(id, userId);
+        }
+
         public async Task<IEnumerable<Request>> ListAsync()
         {
             return await _context.Requests.ToListAsync();

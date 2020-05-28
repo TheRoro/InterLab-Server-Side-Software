@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace InterLab.API.Controllers
 {
     [Route("/api/internships/{internshipId}/requests")]
-    public class InternshipRequestsController
+    public class InternshipRequestsController : Controller
     {
         private readonly IRequestService _requestService;
         private readonly IMapper _mapper;

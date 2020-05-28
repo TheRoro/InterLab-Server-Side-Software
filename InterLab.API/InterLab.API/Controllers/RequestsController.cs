@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("/api/users/{userId}/requests")]
     public class RequestsController : Controller
     {
         private readonly IRequestService _requestService;
@@ -21,26 +21,6 @@ namespace InterLab.API.Controllers
         {
             _requestService = requestService;
             _mapper = mapper;
-        }
-
-        [HttpGet]
-        public async Task<IEnumerable<RequestResource>> GetAllAsync()
-        {
-            var requests = await _requestService.ListAsync();
-            var resources = _mapper
-                .Map<IEnumerable<Request>, IEnumerable<RequestResource>>(requests);
-            return resources;
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetAsync(int id)
-        {
-            var result = await _requestService.GetByIdAsync(id);
-            if (!result.Success)
-                return BadRequest(result.Message);
-            var requestResource = _mapper.Map<Request, RequestResource>(result.Resource);
-            return Ok(requestResource);
-
         }
 
         [HttpPost]
@@ -54,8 +34,8 @@ namespace InterLab.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var requestResource = _mapper.Map<Request, SaveRequestResource>(result.Resource);
-            return Ok(requestResource);
+            var requestService = _mapper.Map<Request, RequestResource>(result.Resource);
+            return Ok(requestService);
         }
 
         [HttpPut("{id}")]
