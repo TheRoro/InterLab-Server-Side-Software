@@ -8,10 +8,12 @@ namespace InterLab.API.Domain.Repositories
 {
     public interface IRequirementRepository
     {
-        Task<IEnumerable<Requirement>> ListAsync();
-        Task AddAsync(Requirement requirement);
         Task<Requirement> FindByIdAsync(int id);
+
+        Task<IEnumerable<Requirement>> ListAsync();
         Task<IEnumerable<Requirement>> ListByInternshipIdAsync(int internshipId);
+
+        Task AddAsync(Requirement requirement);
         void Update(Requirement requirement);
         void Remove(Requirement requirement);
     }

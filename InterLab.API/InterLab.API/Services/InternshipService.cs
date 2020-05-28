@@ -20,38 +20,32 @@ namespace InterLab.API.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<InternshipResponse> DeleteAsync(int id)
-        {
-            var existingIntership = await _internshipRepository.FindById(id);
-
-            if (existingIntership == null)
-                return new InternshipResponse("Intership not found"); 
-
-            try
-            {
-                _internshipRepository.Remove(existingIntership);
-                await _unitOfWork.CompleteAsync();
-                return new InternshipResponse(existingIntership);
-            }
-            catch (Exception ex)
-            {
-                return new InternshipResponse($"An error ocurred while deleting intership:  {ex.Message}");
-            }
-        }
-
         public async Task<InternshipResponse> GetByIdAsync(int id)
         {
             var existingIntership = await _internshipRepository.FindById(id);
 
             if (existingIntership == null)
-                return new InternshipResponse("Profile not found");
+                return new InternshipResponse("Internship not found");
+            return new InternshipResponse(existingIntership);
+        }
+        public async Task<InternshipResponse> GetByIdAndCompanyIdAsync(int id, int companyId)
+        {
+            var existingIntership = await _internshipRepository.FindByCompanyIdAndIntershipIdAsynd(id, companyId);
+
+            if (existingIntership == null)
+                return new InternshipResponse("Intership not found");
             return new InternshipResponse(existingIntership);
         }
 
+        public async Task<IEnumerable<Internship>> ListAsync()
+        {
+            return await _internshipRepository.ListAsync();
+        }
         public async Task<IEnumerable<Internship>> ListByCompanyIdAsync(int companyId)
         {
-            return await _internshipRepository.ListByCompanyIdAsync(companyId); 
+            return await _internshipRepository.ListByCompanyIdAsync(companyId);
         }
+
 
         public async Task<InternshipResponse> SaveAsync(Internship internship)
         {
@@ -64,7 +58,7 @@ namespace InterLab.API.Services
             }
             catch (Exception ex)
             {
-                return new InternshipResponse($"An error ocurred while saving the intership: {ex.Message}");
+                return new InternshipResponse($"An error ocurred while saving the internship: {ex.Message}");
             }
         }
 
@@ -90,20 +84,23 @@ namespace InterLab.API.Services
                 return new InternshipResponse($"An error ocurred while updating intership:  {ex.Message}");
             }
         }
-
-        public async Task<InternshipResponse> GetByIdAndCompanyIdAsync(int id, int companyId)
+        public async Task<InternshipResponse> DeleteAsync(int id)
         {
-            var existingIntership = await _internshipRepository.FindByCompanyIdAndIntershipIdAsynd(id, companyId);
+            var existingIntership = await _internshipRepository.FindById(id);
 
             if (existingIntership == null)
-                return new InternshipResponse("Intership not found");
-            return new InternshipResponse(existingIntership);
-        }
+                return new InternshipResponse("Internship not found");
 
-        public async Task<IEnumerable<Internship>> ListAsync()
-        {
-            return await _internshipRepository.ListAsync();
+            try
+            {
+                _internshipRepository.Remove(existingIntership);
+                await _unitOfWork.CompleteAsync();
+                return new InternshipResponse(existingIntership);
+            }
+            catch (Exception ex)
+            {
+                return new InternshipResponse($"An error ocurred while deleting internship:  {ex.Message}");
+            }
         }
-
     }
 }

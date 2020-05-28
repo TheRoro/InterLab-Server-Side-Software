@@ -9,12 +9,14 @@ namespace InterLab.API.Domain.Services
 {
     public interface IRequestService
     {
+        Task<RequestResponse> GetByIdAsync(int id);
+        Task<RequestResponse> GetByIdAndUserIdAsync(int id, int userId);
+        Task<RequestResponse> GetByIdAndInternshipIdAsync(int id, int internshipId);
+
         Task<IEnumerable<Request>> ListAsync();
         Task<IEnumerable<Request>> ListByInternshipIdAsync(int internshipId);
         Task<IEnumerable<Request>> ListByUserIdAsync(int userId);
-        Task<RequestResponse> GetByIdAndUserIdAsync(int id, int userId);
-        Task<RequestResponse> GetByIdAndInternshipIdAsync(int id, int internshipId);
-        Task<RequestResponse> GetByIdAsync(int id);
+
         Task<RequestResponse> SaveAsync(Request request);
         Task<RequestResponse> UpdateAsync(int id, Request request);
         Task<RequestResponse> DeleteAsync(int id);

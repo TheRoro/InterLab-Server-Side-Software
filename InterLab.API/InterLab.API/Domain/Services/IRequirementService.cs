@@ -9,9 +9,11 @@ namespace InterLab.API.Domain.Services
 {
     public interface IRequirementService
     {
+        Task<RequirementResponse> GetByIdAsync(int id);
+
         Task<IEnumerable<Requirement>> ListAsync();
         Task<IEnumerable<Requirement>> ListByInternshipIdAsync(int internshipId);
-        Task<RequirementResponse> GetByIdAsync(int id);
+
         Task<RequirementResponse> SaveAsync(Requirement requirement);
         Task<RequirementResponse> UpdateAsync(int id, Requirement requirement);
         Task<RequirementResponse> DeleteAsync(int id);

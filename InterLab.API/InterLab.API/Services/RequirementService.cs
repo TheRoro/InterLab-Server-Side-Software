@@ -20,23 +20,22 @@ namespace InterLab.API.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable<Requirement>> ListAsync()
-        {
-            return await _requirementRepository.ListAsync();
-        }
-
-        public async Task<IEnumerable<Requirement>> ListByInternshipIdAsync(int internshipId)
-        {
-            return await _requirementRepository.ListByInternshipIdAsync(internshipId);
-        }
-
         public async Task<RequirementResponse> GetByIdAsync(int id)
         {
             var existingRequirement = await _requirementRepository.FindByIdAsync(id);
 
             if (existingRequirement == null)
                 return new RequirementResponse("Requirement not found");
-            return new RequirementResponse(existingRequirement);  
+            return new RequirementResponse(existingRequirement);
+        }
+
+        public async Task<IEnumerable<Requirement>> ListAsync()
+        {
+            return await _requirementRepository.ListAsync();
+        }
+        public async Task<IEnumerable<Requirement>> ListByInternshipIdAsync(int internshipId)
+        {
+            return await _requirementRepository.ListByInternshipIdAsync(internshipId);
         }
 
         public async Task<RequirementResponse> SaveAsync(Requirement requirement)
@@ -53,7 +52,6 @@ namespace InterLab.API.Services
                 return new RequirementResponse($"An error ocurred while saving the requirement: {ex.Message}");
             }
         }
-
         public async Task<RequirementResponse> UpdateAsync(int id, Requirement requirement)
         {
             var existingRequirement = await _requirementRepository.FindByIdAsync(id);
@@ -79,7 +77,6 @@ namespace InterLab.API.Services
             }
 
         }
-
         public async Task<RequirementResponse> DeleteAsync(int id)
         {
             var existingRequirement = await _requirementRepository.FindByIdAsync(id);
