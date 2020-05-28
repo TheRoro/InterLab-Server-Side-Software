@@ -50,8 +50,8 @@ namespace InterLab.API
             services.AddScoped<IDocumentService, DocumentService>();
             services.AddScoped<IDocumentRepository, DocumentRepository>();
 
-            //services.AddScoped<IInternshipService, InternshipService>();
-            //services.AddScoped<IInternshipRepository, InternshipRepository>();
+            services.AddScoped<IInternshipService, InternshipService>();
+            services.AddScoped<IInternshipRepository, InternshipRepository>();
 
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<IProfileService, ProfileService>();
@@ -68,8 +68,8 @@ namespace InterLab.API
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
 
-            //services.AddScoped<IUserCompanyRepository, UserCompanyRepository>();
-            //services.AddScoped<IUserCompanyService, UserCompanyService>();
+            services.AddScoped<IUserCompanyRepository, UserCompanyRepository>();
+            services.AddScoped<IUserCompanyService, UserCompanyService>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InterLab API", Version = "v1" });
