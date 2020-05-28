@@ -41,16 +41,6 @@ namespace InterLab.API.Services
 
         }
 
-        public  Task<Profile> GetByIdAndStudentId(int id, int studentId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public  Task<Profile> GetByIdAndWorkerId(int id, int workerId)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<ProfileResponse> GetByIdAsync(int id)
         {
             var existingProfile = await _profileRepository.FindById(id);
@@ -107,14 +97,14 @@ namespace InterLab.API.Services
             }
         }
 
-        //public async Task<IEnumerable<Profile>> ListByStudentId(int studentId)
-        //{
-        //    return await _profileRepository.ListByStudentId(studentId);
-        //}
+        public Task<Profile> GetByIdAndUsertId(int id, int userId) 
+        {
+            throw new NotImplementedException();
+        }
 
-        //public async Task<IEnumerable<Profile>> ListByWorkerId(int workerId)
+        //public async Task<IEnumerable<Profile>> ListByUserId(int userId)
         //{
-        //    return await _profileRepository.ListByWorkerId(workerId);
+        //    return await _profileRepository.ListByUserId(userId);
         //}
     }
 }
