@@ -9,13 +9,11 @@ namespace InterLab.API.Domain.Services
 {
     public interface IInternshipService
     {
+        Task<InternshipResponse> GetByIdAsync(int id);
+        Task<InternshipResponse> GetByIdAndCompanyIdAsync(int id, int companyId);
 
         Task<IEnumerable<Internship>> ListAsync();
         Task<IEnumerable<Internship>> ListByCompanyIdAsync(int companyId);
-
-        Task<InternshipResponse> GetByIdAndCompanyIdAsync(int id, int companyId);
-
-        Task<InternshipResponse> GetByIdAsync(int id);
 
         Task<InternshipResponse> SaveAsync(Internship internship);
         Task<InternshipResponse> UpdateAsync(int id, Internship internship);
