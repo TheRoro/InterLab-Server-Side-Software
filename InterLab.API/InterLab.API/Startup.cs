@@ -50,8 +50,8 @@ namespace InterLab.API
             services.AddScoped<IDocumentService, DocumentService>();
             services.AddScoped<IDocumentRepository, DocumentRepository>();
 
-            services.AddScoped<IInternshipService, InternshipService>();
-            services.AddScoped<IInternshipRepository, InternshipRepository>();
+            //services.AddScoped<IInternshipService, InternshipService>();
+            //services.AddScoped<IInternshipRepository, InternshipRepository>();
 
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<IProfileService, ProfileService>();
@@ -59,7 +59,7 @@ namespace InterLab.API
             //services.AddScoped<IQualificationRepository, QualificationRepository>();
             services.AddScoped<IQualificationService, QualificationService>();
 
-            //services.AddScoped<IRequestRepository, RequestRepository>();
+            services.AddScoped<IRequestRepository, RequestRepository>();
             services.AddScoped<IRequestService, RequestService>();
 
             services.AddScoped<IRequirementRepository, RequirementRepository>();
