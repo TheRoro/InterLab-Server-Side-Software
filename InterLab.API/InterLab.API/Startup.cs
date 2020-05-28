@@ -56,7 +56,7 @@ namespace InterLab.API
             services.AddScoped<IProfileRepository, ProfileRepository>();
             services.AddScoped<IProfileService, ProfileService>();
 ;
-            //services.AddScoped<IQualificationRepository, QualificationRepository>();
+            services.AddScoped<IQualificationRepository, QualificationRepository>();
             services.AddScoped<IQualificationService, QualificationService>();
 
             services.AddScoped<IRequestRepository, RequestRepository>();
