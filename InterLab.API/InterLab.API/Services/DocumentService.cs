@@ -39,7 +39,7 @@ namespace InterLab.API.Services
             }
         }
 
-        public async Task<DocumentResponse> GetByIdAndUserId(int id, int studentId)
+        public async Task<DocumentResponse> GetByIdAndUserIdAsync(int id, int studentId)
         {
             var existingDocument = await _documentRepository.FindByUserIdAndDocumentIdAsynd(id, studentId);
 
@@ -50,7 +50,7 @@ namespace InterLab.API.Services
         }
 
 
-        public async Task<IEnumerable<Document>> ListByUserId(int userId)
+        public async Task<IEnumerable<Document>> ListByUserIdAsync(int userId)
         {
             return await _documentRepository.ListByUserId(userId);
         }
