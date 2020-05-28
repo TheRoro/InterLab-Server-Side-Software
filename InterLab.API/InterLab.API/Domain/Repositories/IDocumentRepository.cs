@@ -13,7 +13,7 @@ namespace InterLab.API.Domain.Repositories
         //getlBy DocumentId
         Task<Document> FindById(int id);
         //getByUserd and DocumentId
-        Task<Document> FindByUserIdAndDocumentIdAsynd(int userId, int Id);
+        Task<Document> FindByUserIdAndDocumentIdAsync(int userId, int Id);
         //Add
         Task AddAsync(Document document);
         //Delete

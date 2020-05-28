@@ -10,7 +10,7 @@ namespace InterLab.API.Domain.Services
     public interface IDocumentService
     {
         Task<IEnumerable<Document>> ListByUserIdAsync(int userId);
-        Task<DocumentResponse> GetByIdAndUserIdAsync(int id, int studentId);
+        Task<DocumentResponse> GetById(int id);
         Task<DocumentResponse> SaveAsync(Document document);
         Task<DocumentResponse> UpdateAsync(int id, Document document);
         Task<DocumentResponse> DeleteAsync(int id);
