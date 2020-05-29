@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace InterLab.API.Controllers
 {
 
-    [Route("/api/users/{userId}/profiles")]
+    [Route("/api/[controller]")]
     public class ProfilesController : Controller
     {
         private readonly IProfileService _profileService; 
