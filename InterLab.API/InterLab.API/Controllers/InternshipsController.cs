@@ -45,7 +45,7 @@ namespace InterLab.API.Controllers
 
             if (!result.Success)
                 return BadRequest(result.Message);
-            var internshipResource = _mapper.Map<Internship, SaveInternshipResource>(result.Resource);
+            var internshipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
             return Ok(internshipResource);
 
 
@@ -57,7 +57,7 @@ namespace InterLab.API.Controllers
 
             if (!result.Success)
                 return BadRequest(result.Message);
-            var internshipResource = _mapper.Map<Internship, SaveInternshipResource>(result.Resource);
+            var internshipResource = _mapper.Map<Internship, InternshipResource>(result.Resource);
             return Ok(internshipResource);
         }
     }
