@@ -22,7 +22,7 @@ namespace InterLab.API.Domain.Services
         //gett by FindId
         Task<ProfileResponse> GetByIdAsync(int id);
 
-        Task<ProfileResponse> SaveAsync(Profile profile); 
+        Task<ProfileResponse> SaveAsync(Profile profile, int userId); 
         Task<ProfileResponse> UpdateAsync(int id, Profile profile);
         Task<ProfileResponse> DeleteAsync(int id);
     }
