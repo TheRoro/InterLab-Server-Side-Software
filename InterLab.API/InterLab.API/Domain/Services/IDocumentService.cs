@@ -11,8 +11,8 @@ namespace InterLab.API.Domain.Services
     {
         Task<IEnumerable<Document>> ListByUserIdAsync(int userId);
         Task<DocumentResponse> GetById(int id);
-        Task<DocumentResponse> SaveAsync(Document document);
+        Task<DocumentResponse> SaveAsync(Document document, int userId);
         Task<DocumentResponse> UpdateAsync(int id, Document document);
-        Task<DocumentResponse> DeleteAsync(int id);
+        Task<DocumentResponse> DeleteAsync(int id, int userId);
     }
 }
