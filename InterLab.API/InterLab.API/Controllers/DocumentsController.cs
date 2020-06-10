@@ -24,12 +24,12 @@ namespace InterLab.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveDocumentResource resource)
+        public async Task<IActionResult> PostAsync([FromBody] SaveDocumentResource resource, int userId)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             var document = _mapper.Map<SaveDocumentResource, Document>(resource);
-            var result = await _documentService.SaveAsync(document);
+            var result = await _documentService.SaveAsync(document, userId);
 
             if (!result.Success)
                 return BadRequest(result.Message);
@@ -51,9 +51,9 @@ namespace InterLab.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> DeleteAsync(int id, int userId)
         {
-            var result = await _documentService.DeleteAsync(id);
+            var result = await _documentService.DeleteAsync(id, userId);
 
             if (!result.Success)
                 return BadRequest(result.Message);
