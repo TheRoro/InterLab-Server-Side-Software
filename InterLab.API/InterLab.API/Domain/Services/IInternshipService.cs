@@ -15,8 +15,8 @@ namespace InterLab.API.Domain.Services
         Task<IEnumerable<Internship>> ListAsync();
         Task<IEnumerable<Internship>> ListByCompanyIdAsync(int companyId);
 
-        Task<InternshipResponse> SaveAsync(Internship internship);
+        Task<InternshipResponse> SaveAsync(Internship internship, int companyId);
         Task<InternshipResponse> UpdateAsync(int id, Internship internship);
-        Task<InternshipResponse> DeleteAsync(int id);
+        Task<InternshipResponse> DeleteAsync(int id, int companyId);
     }
 }

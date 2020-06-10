@@ -12,11 +12,13 @@ namespace InterLab.API.Services
     public class InternshipService : IInternshipService
     {
         private readonly IInternshipRepository _internshipRepository;
+        private readonly ICompanyRepository _companyRepository;
         public readonly IUnitOfWork _unitOfWork;
 
-        public InternshipService(IInternshipRepository internshipRepository, IUnitOfWork unitOfWork)
+        public InternshipService(IInternshipRepository internshipRepository, ICompanyRepository companyRepository, IUnitOfWork unitOfWork)
         {
             _internshipRepository = internshipRepository;
+            _companyRepository = companyRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -47,10 +49,13 @@ namespace InterLab.API.Services
         }
 
 
-        public async Task<InternshipResponse> SaveAsync(Internship internship)
+        public async Task<InternshipResponse> SaveAsync(Internship internship, int companyId)
         {
             try
             {
+                Company company = await _companyRepository.FindById(companyId);
+                internship.Company = company;
+                company.Internships.Add(internship);
                 await _internshipRepository.AddAsync(internship);
                 await _unitOfWork.CompleteAsync();
 
@@ -84,7 +89,7 @@ namespace InterLab.API.Services
                 return new InternshipResponse($"An error ocurred while updating intership:  {ex.Message}");
             }
         }
-        public async Task<InternshipResponse> DeleteAsync(int id)
+        public async Task<InternshipResponse> DeleteAsync(int id, int companyId)
         {
             var existingIntership = await _internshipRepository.FindById(id);
 
@@ -93,6 +98,8 @@ namespace InterLab.API.Services
 
             try
             {
+                Company company = await _companyRepository.FindById(companyId);
+                company.Internships.Remove(existingIntership);
                 _internshipRepository.Remove(existingIntership);
                 await _unitOfWork.CompleteAsync();
                 return new InternshipResponse(existingIntership);
