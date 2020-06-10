@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using InterLab.API.Domain.Repositories;
 using InterLab.API.Domain.Services.Communication;
 using InterLab.API.Domain.Models;
+using InterLab.API.Domain.IRepositories;
 
 namespace InterLab.API.Services
 {
     public class DocumentService : IDocumentService
     {
         private readonly IDocumentRepository _documentRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public DocumentService(IDocumentRepository documentRepository, IUnitOfWork unitOfWork)
+        public DocumentService(IDocumentRepository documentRepository, IUserRepository userRepository, IUnitOfWork unitOfWork)
         {
             _documentRepository = documentRepository;
+            _userRepository = userRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<DocumentResponse> DeleteAsync(int id)
+        public async Task<DocumentResponse> DeleteAsync(int id, int userId)
         {
             var existingDocument = await _documentRepository.FindById(id);
             if (existingDocument == null)
@@ -28,6 +31,8 @@ namespace InterLab.API.Services
 
             try
             {
+                User user = await _userRepository.FindByIdAsync(userId);
+                user.Documents.Remove(existingDocument);
                 _documentRepository.Remove(existingDocument);
                 await _unitOfWork.CompleteAsync();
 
@@ -55,11 +60,14 @@ namespace InterLab.API.Services
             return await _documentRepository.ListByUserId(userId);
         }
 
-        public async Task<DocumentResponse> SaveAsync(Document document)
+        public async Task<DocumentResponse> SaveAsync(Document document, int userId)
         {
             try
             {
-                await _documentRepository.AddAsync(document);
+                User user = await _userRepository.FindByIdAsync(userId);
+                document.User = user;
+                user.Documents.Add(document);
+                await _documentRepository.AddAsync(document); 
                 await _unitOfWork.CompleteAsync();
 
                 return new DocumentResponse(document);
