@@ -14,5 +14,6 @@ namespace InterLab.API.Domain.Services
         Task<CompanyResponse> SaveAsync(Company company);
         Task<CompanyResponse> UpdateAsync(int id, Company company);
         Task<CompanyResponse> DeleteAsync(int id);
+        Task<IEnumerable<Company>> ListByUserIdAsync(int userId);
     }
 }
