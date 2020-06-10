@@ -12,11 +12,13 @@ namespace InterLab.API.Services
     public class CompanyService : ICompanyService
     {
         private readonly ICompanyRepository _companyRepository;
+        private readonly IUserCompanyRepository _userCompanyRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CompanyService(ICompanyRepository companyRepository, IUnitOfWork unitOfWork)
+        public CompanyService(ICompanyRepository companyRepository, IUserCompanyRepository userCompanyRepository, IUnitOfWork unitOfWork)
         {
             _companyRepository = companyRepository;
+            _userCompanyRepository = userCompanyRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -85,6 +87,14 @@ namespace InterLab.API.Services
             {
                 return new CompanyResponse($"An error ocurred while deleting company: {ex.Message}");
             }
+        }
+
+        public async Task<IEnumerable<Company>> ListByUserIdAsync(int userId)
+        {
+            var userCompanies = await _userCompanyRepository.ListByUserIdAsync(userId);
+            var companies = userCompanies.Select(uc => uc.Company).ToList();
+            return companies;
+
         }
     }
 }
