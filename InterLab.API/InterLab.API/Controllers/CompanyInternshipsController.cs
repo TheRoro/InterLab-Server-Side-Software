@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Services;
+using InterLab.API.Extensions;
 using InterLab.API.Resources;
 using InterLab.API.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -48,12 +49,12 @@ namespace InterLab.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveInternshipResource resource)
+        public async Task<IActionResult> PostAsync([FromBody] SaveInternshipResource resource, int companyId)
         {
             if (ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             var internship = _mapper.Map<SaveInternshipResource, Internship>(resource);
-            var result = await _internshipService.SaveAsync(internship);
+            var result = await _internshipService.SaveAsync(internship, companyId);
 
             if (!result.Success)
                 return BadRequest(result.Message);
@@ -77,9 +78,9 @@ namespace InterLab.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> DeleteAsync(int id, int companyId)
         {
-            var result = await _internshipService.DeleteAsync(id);
+            var result = await _internshipService.DeleteAsync(id, companyId);
 
             if (!result.Success)
                 return BadRequest(result.Message);
