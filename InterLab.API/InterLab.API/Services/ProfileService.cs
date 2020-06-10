@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InterLab.API.Domain.IRepositories;
 using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Repositories;
 using InterLab.API.Domain.Services;
@@ -12,12 +13,14 @@ namespace InterLab.API.Services
     public class ProfileService : IProfileService
     {
 
-        private readonly IProfileRepository _profileRepository;  
+        private readonly IProfileRepository _profileRepository;
+        private readonly IUserRepository _userRepository;
         public readonly IUnitOfWork _unitOfWork;
 
-        public ProfileService(IProfileRepository profileRepository, IUnitOfWork unitOfWork)
+        public ProfileService(IProfileRepository profileRepository, IUserRepository userRepository, IUnitOfWork unitOfWork)
         {
             _profileRepository = profileRepository;
+            _userRepository = userRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -55,10 +58,12 @@ namespace InterLab.API.Services
             return await _profileRepository.ListAsync();
         }
 
-        public async Task<ProfileResponse> SaveAsync(Profile profile)
+        public async Task<ProfileResponse> SaveAsync(Profile profile, int userId)
         {
             try
             {
+                User user = await _userRepository.FindByIdAsync(userId);
+                profile.User = user;
                 await _profileRepository.AddAsync(profile);
                 await _unitOfWork.CompleteAsync();
 
