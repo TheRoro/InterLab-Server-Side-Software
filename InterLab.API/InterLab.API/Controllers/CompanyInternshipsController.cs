@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Services;
+using InterLab.API.Extensions;
 using InterLab.API.Resources;
 using InterLab.API.Services;
 using Microsoft.AspNetCore.Mvc;

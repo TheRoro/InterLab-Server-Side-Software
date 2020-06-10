@@ -14,5 +14,6 @@ namespace InterLab.API.Domain.Services
         Task<IEnumerable<UserCompany>> ListByCompanyIdAsync(int companyId);
         Task<UserCompanyResponse> AssignUserCompanyAsync(int userId, int companyId);
         Task<UserCompanyResponse> UnassignUserCompanyAsync(int userId, int companyId);
+
     }
 }
