@@ -11,13 +11,15 @@ namespace InterLab.API.Domain.Repositories
         Task<UserCompany> FindByUserIdAndCompanyId(int userId, int companyId);
 
         Task<IEnumerable<UserCompany>> ListAsync();
-        Task<IEnumerable<UserCompany>> ListByUserIdAsync(int userId);
         Task<IEnumerable<UserCompany>> ListByCompanyIdAsync(int companyId);
+
+        Task<IEnumerable<UserCompany>> ListByUserIdAsync(int userId);
 
         Task AddAsync(UserCompany userCompany);
         void Remove(UserCompany userCompany);
 
         Task AssignUserCompany(int userId, int companyId);
         void UnassignUserCompany(int userId, int companyId);
+
     }
 }
