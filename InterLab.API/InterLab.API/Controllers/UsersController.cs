@@ -8,15 +8,19 @@ using InterLab.API.Controllers;
 using AutoMapper;
 using InterLab.API.Persistence.Repositories;
 using InterLab.API.Resources;
+using Microsoft.AspNetCore.Authorization;
+using InterLab.API.Domain.Services.Communication;
+using Renci.SshNet.Messages;
 
 namespace InterLab.API.Controllers
 {
-    [Route("/api/[controller]")]
-    public class UsersController : Controller
+    [Authorize]
+    [ApiController]
+    [Route("/api/users")]
+    public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;   
         private readonly IMapper _mapper; 
-
 
         public UsersController(IUserService userService, IMapper mapper)
         {
@@ -24,6 +28,7 @@ namespace InterLab.API.Controllers
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<UserResource>> GetAllAsync()
         {
@@ -32,6 +37,7 @@ namespace InterLab.API.Controllers
             return resources;
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(int id)
         {
@@ -40,6 +46,26 @@ namespace InterLab.API.Controllers
                 return BadRequest(result.Message);
             var profileResource = _mapper.Map<User, UserResource>(result.Resource);
             return Ok(profileResource);
+        }
+
+        //[AllowAnonymous]
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    var users = _userService.GetAll();
+        //    return Ok(users);
+        //}
+
+        [AllowAnonymous]
+        [HttpPost("Authenticate")]
+        public IActionResult Authenticate([FromBody] AuthenticateRequest request)
+        {
+            var response = _userService.Authenticate(request);
+
+            if (response == null)
+                return BadRequest(new { message = "Invalid Username or Password" });
+
+            return Ok(response);
         }
 
     }

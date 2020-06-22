@@ -9,6 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using InterLab.API.Domain.Repositories;
 using InterLab.API.Domain.Services.Communication;
+using InterLab.API.Settings;
+using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace InterLab.API.Services
 {
@@ -17,10 +23,12 @@ namespace InterLab.API.Services
 
         private readonly IUserRepository _userRepository;
         public readonly IUnitOfWork _unitOfWork;
+        private readonly AppSettings _appSettings;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IOptions<AppSettings> appSettings)
         {
             _userRepository = userRepository;
+            _appSettings = appSettings.Value;
         }
 
         public async Task<IEnumerable<User>> ListAsync()
@@ -91,6 +99,52 @@ namespace InterLab.API.Services
             {
                 return new UserResponse($"An error ocurred while deleting user: {ex.Message}");
             }
+        }
+
+        private List<User> _users = new List<User>
+        {
+            new User {
+                Id = 1,
+                Username = "8rb",
+                Password = "test"
+            }
+        };
+
+        public AuthenticateResponse Authenticate(AuthenticateRequest request)
+        {
+            var user = _users.SingleOrDefault(x =>
+            x.Username == request.Username &&
+            x.Password == request.Password);
+
+            if (user == null) return null;
+
+            var token = GenerateJwtToken(user);
+
+            return new AuthenticateResponse(user, token);
+
+        }
+
+        public IEnumerable<User> GetAll()
+        {
+            return _users;
+        }
+
+        private string GenerateJwtToken(User user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(20),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
