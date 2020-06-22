@@ -9,6 +9,9 @@ namespace InterLab.API.Domain.Services
 {
     public interface IUserService
     {
+        AuthenticateResponse Authenticate(AuthenticateRequest request);
+        IEnumerable<User> GetAll();
+
         Task<IEnumerable<User>> ListAsync();
         Task<UserResponse> GetById(int id);
         Task<UserResponse> SaveAsync(User user);
