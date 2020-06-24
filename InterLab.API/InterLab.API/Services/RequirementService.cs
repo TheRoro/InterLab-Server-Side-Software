@@ -61,8 +61,6 @@ namespace InterLab.API.Services
 
             existingRequirement.Field = requirement.Field;
             existingRequirement.Semester = requirement.Semester;
-            existingRequirement.Degree = requirement.Degree;
-            existingRequirement.Description = requirement.Description;
 
             try
             {

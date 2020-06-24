@@ -11,10 +11,10 @@ using InterLab.API.Resources;
 using Microsoft.AspNetCore.Authorization;
 using InterLab.API.Domain.Services.Communication;
 using Renci.SshNet.Messages;
+using InterLab.API.Extensions;
 
 namespace InterLab.API.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("/api/users")]
     public class UsersController : ControllerBase
@@ -66,6 +66,21 @@ namespace InterLab.API.Controllers
                 return BadRequest(new { message = "Invalid Username or Password" });
 
             return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SaveUserResource resource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+            var request = _mapper.Map<SaveUserResource, User>(resource);
+            var result = await _userService.SaveAsync(request);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var userRequest = _mapper.Map<User, UserResource>(result.Resource);
+            return Ok(userRequest);
         }
 
     }
