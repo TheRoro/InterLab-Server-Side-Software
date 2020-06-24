@@ -74,10 +74,12 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Internship>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Internship>().Property(p => p.State).IsRequired().HasMaxLength(30);
             builder.Entity<Internship>().Property(p => p.Description).IsRequired().HasMaxLength(30);
-            builder.Entity<Internship>().Property(p => p.PublicationDate).IsRequired().HasMaxLength(20);
-            builder.Entity<Internship>().Property(p => p.StartingDate).IsRequired().HasMaxLength(20);
-            builder.Entity<Internship>().Property(p => p.FinishingDate).IsRequired().HasMaxLength(20);
+            builder.Entity<Internship>().Property(p => p.PublicationDate).IsRequired().HasMaxLength(40);
+            builder.Entity<Internship>().Property(p => p.StartingDate).IsRequired().HasMaxLength(40);
+            builder.Entity<Internship>().Property(p => p.FinishingDate).IsRequired().HasMaxLength(40);
             builder.Entity<Internship>().Property(p => p.Salary).IsRequired().HasMaxLength(30);
+            builder.Entity<Internship>().Property(p => p.Location).IsRequired();
+            builder.Entity<Internship>().Property(p => p.RequiredDocuments).IsRequired();
 
             //Relationships:
 
@@ -102,11 +104,11 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Profile>().Property(p => p.Role).IsRequired();
             builder.Entity<Profile>().Property(p => p.FirstName).IsRequired();
             builder.Entity<Profile>().Property(p => p.LastName).IsRequired();
-            builder.Entity<Profile>().Property(p => p.Field).IsRequired();
-            builder.Entity<Profile>().Property(p => p.Phone).IsRequired();
-            builder.Entity<Profile>().Property(p => p.Description).IsRequired();
-            builder.Entity<Profile>().Property(p => p.Country).IsRequired();
-            builder.Entity<Profile>().Property(p => p.City).IsRequired();
+            builder.Entity<Profile>().Property(p => p.Field);
+            builder.Entity<Profile>().Property(p => p.Phone);
+            builder.Entity<Profile>().Property(p => p.Description);
+            builder.Entity<Profile>().Property(p => p.Country);
+            builder.Entity<Profile>().Property(p => p.City);
             //Properties only required for Student
             builder.Entity<Profile>().Property(p => p.University);
             builder.Entity<Profile>().Property(P => P.Degree);
@@ -160,8 +162,6 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Requirement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Requirement>().Property(p => p.Field).IsRequired().HasMaxLength(10);
             builder.Entity<Requirement>().Property(p => p.Semester).IsRequired().HasMaxLength(10);
-            builder.Entity<Requirement>().Property(p => p.Degree).IsRequired().HasMaxLength(10);
-            builder.Entity<Requirement>().Property(p => p.Description).IsRequired().HasMaxLength(10);
 
             //Relationships:
 
@@ -177,6 +177,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(30);
             builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(30);
             builder.Entity<User>().Property(p => p.DateCreated).IsRequired().HasMaxLength(10);
+            builder.Entity<User>().Property(p => p.Token);
 
             //Relationships Student:
 

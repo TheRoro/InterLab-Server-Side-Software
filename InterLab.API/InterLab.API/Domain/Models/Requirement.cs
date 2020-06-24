@@ -10,8 +10,6 @@ namespace InterLab.API.Domain.Models
         public int Id { get; set; }
         public string Field { get; set; }
         public int Semester { get; set; }
-        public string Degree { get; set; }
-        public string Description { get; set; }
 
         //Relationships:
 

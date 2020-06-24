@@ -14,15 +14,10 @@ namespace InterLab.API.Resources
         public string Role { get; set; }
         [Required]
         public string LastName { get; set; }
-        [Required]
         public string Field { get; set; }
-        [Required]
         public string Phone { get; set; }
-        [Required]
         public string Description { get; set; }
-        [Required]
         public string Country { get; set; }
-        [Required]
         public string City { get; set; }
 
         //Only Student Properties
