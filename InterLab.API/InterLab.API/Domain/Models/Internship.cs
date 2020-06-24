@@ -9,12 +9,15 @@ namespace InterLab.API.Domain.Models
     {
 
         public int Id { get; set; }
+        public string JobTitle { get; set; }
         public string State { get; set; }
+        public string Location { get; set; }
         public string Description { get; set; }
         public DateTime PublicationDate { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime FinishingDate { get; set; }
         public double Salary { get; set; }
+        public string RequiredDocuments { get; set; }
 
         //Relationships:
 
