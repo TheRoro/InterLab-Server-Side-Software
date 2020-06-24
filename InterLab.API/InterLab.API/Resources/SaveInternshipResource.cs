@@ -20,5 +20,9 @@ namespace InterLab.API.Resources
         public DateTime FinishingDate { get; set; }
         [Required]
         public double Salary { get; set; }
+        [Required]
+        public string Location { get; set; }
+        [Required]
+        public string RequiredDocuments { get; set; }
     }
 }
