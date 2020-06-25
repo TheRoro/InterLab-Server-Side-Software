@@ -69,7 +69,6 @@ namespace InterLab.API
 
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseMySQL("server=localhost;database=interlab_c#;user=root;password=omar2702");
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<IUnitOfWork, UnitOfWork>();
