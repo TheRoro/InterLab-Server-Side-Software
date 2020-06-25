@@ -40,7 +40,20 @@ namespace InterLab.API.Controllers
             var profileResource = _mapper.Map<Domain.Models.Profile, ProfileResource>(result.Resource);
             return Ok(profileResource);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SaveProfileResource resource, int userId)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+            var profile = _mapper.Map<SaveProfileResource, Domain.Models.Profile>(resource); 
+            var result = await _profileService.SaveAsync(profile, userId);  
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var profileResource = _mapper.Map<Domain.Models.Profile, ProfileResource>(result.Resource);
+            return Ok(profileResource); 
+        }
     }
-
-
 }
