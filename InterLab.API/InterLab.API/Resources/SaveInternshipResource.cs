@@ -24,5 +24,7 @@ namespace InterLab.API.Resources
         public string Location { get; set; }
         [Required]
         public string RequiredDocuments { get; set; }
+        [Required]
+        public string JobTitle { get; set; }
     }
 }
