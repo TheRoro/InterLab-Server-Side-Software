@@ -17,5 +17,6 @@ namespace InterLab.API.Resources
         public double Salary { get; set; }
         public string Location { get; set; }
         public string RequiredDocuments { get; set; }
+        public string JobTitle { get; set; }
     }
 }
