@@ -31,7 +31,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Company>().HasKey(p => p.Id);
             builder.Entity<Company>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Company>().Property(p => p.Name).IsRequired().HasMaxLength(30);
-            builder.Entity<Company>().Property(p => p.Description).IsRequired().HasMaxLength(200);
+            builder.Entity<Company>().Property(p => p.Description).IsRequired().HasMaxLength(300);
             builder.Entity<Company>().Property(p => p.Sector).IsRequired().HasMaxLength(30);
             builder.Entity<Company>().Property(p => p.Email).IsRequired().HasMaxLength(30);
             builder.Entity<Company>().Property(p => p.Phone).IsRequired().HasMaxLength(20);
@@ -73,7 +73,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Internship>().HasKey(p => p.Id);
             builder.Entity<Internship>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Internship>().Property(p => p.State).IsRequired().HasMaxLength(30);
-            builder.Entity<Internship>().Property(p => p.Description).IsRequired().HasMaxLength(150);
+            builder.Entity<Internship>().Property(p => p.Description).IsRequired().HasMaxLength(300);
             builder.Entity<Internship>().Property(p => p.PublicationDate).IsRequired().HasMaxLength(40);
             builder.Entity<Internship>().Property(p => p.StartingDate).IsRequired().HasMaxLength(40);
             builder.Entity<Internship>().Property(p => p.FinishingDate).IsRequired().HasMaxLength(40);
