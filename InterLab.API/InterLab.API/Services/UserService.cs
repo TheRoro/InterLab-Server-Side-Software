@@ -25,9 +25,10 @@ namespace InterLab.API.Services
         public readonly IUnitOfWork _unitOfWork;
         private readonly AppSettings _appSettings;
 
-        public UserService(IUserRepository userRepository, IOptions<AppSettings> appSettings)
+        public UserService(IUserRepository userRepository, IOptions<AppSettings> appSettings, IUnitOfWork unitOfWork)
         {
             _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
             _appSettings = appSettings.Value;
         }
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using InterLab.API.Domain.Models;
 using InterLab.API.Domain.Services;
 using InterLab.API.Extensions;
 using InterLab.API.Resources;
@@ -48,7 +49,7 @@ namespace InterLab.API.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveProfileResource resource, int userId)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             var profile = _mapper.Map<SaveProfileResource, Domain.Models.Profile>(resource);
             var result = await _profileService.SaveAsync(profile, userId);
@@ -56,8 +57,8 @@ namespace InterLab.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
 
-            var profileResources = _mapper.Map<Domain.Models.Profile, ProfileResource>(result.Resource);
-            return Ok(profileResources);
+            var profileResource = _mapper.Map<Domain.Models.Profile, ProfileResource>(result.Resource);
+            return Ok(profileResource);
         }
 
         [HttpDelete("{id}")]

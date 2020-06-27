@@ -63,7 +63,7 @@ namespace InterLab.API.Services
             try
             {
                 User user = await _userRepository.FindByIdAsync(userId);
-                profile.User = user;
+                user.Profile = profile;
                 await _profileRepository.AddAsync(profile);
                 await _unitOfWork.CompleteAsync();
 

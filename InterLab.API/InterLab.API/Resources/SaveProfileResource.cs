@@ -8,11 +8,8 @@ namespace InterLab.API.Resources
 {
     public class SaveProfileResource
     {
-        [Required]
-        public string FirstName { get; set; }
-        [Required]
         public string Role { get; set; }
-        [Required]
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Field { get; set; }
         public string Phone { get; set; }

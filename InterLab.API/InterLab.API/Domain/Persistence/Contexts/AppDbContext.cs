@@ -176,7 +176,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<User>().Property(p => p.Username).IsRequired().HasMaxLength(20);
             builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(30);
             builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(30);
-            builder.Entity<User>().Property(p => p.DateCreated).IsRequired().HasMaxLength(10);
+            builder.Entity<User>().Property(p => p.DateCreated).HasMaxLength(10);
             builder.Entity<User>().Property(p => p.Token);
 
             //Relationships Student:
