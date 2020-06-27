@@ -17,8 +17,7 @@ namespace InterLab.API.Resources
         [Required]
         [MaxLength(30)]
         public string Email { get; set; }
-        [Required]
         [MaxLength(30)]
-        public DateTime DateCreated { get; set; }
+        public string DateCreated { get; set; }
     }
 }

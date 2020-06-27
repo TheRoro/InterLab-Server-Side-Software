@@ -12,6 +12,6 @@ namespace InterLab.API.Resources
         public string Password { get; set; }
         public string Email { get; set; }
         public string Token { get; set; }
-        public DateTime DateCreated { get; set; }
+        public string DateCreated { get; set; }
     }
 }
