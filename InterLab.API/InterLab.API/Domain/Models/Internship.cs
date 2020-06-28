@@ -13,9 +13,9 @@ namespace InterLab.API.Domain.Models
         public string State { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
-        public DateTime PublicationDate { get; set; }
-        public DateTime StartingDate { get; set; }
-        public DateTime FinishingDate { get; set; }
+        public string PublicationDate { get; set; }
+        public string StartingDate { get; set; }
+        public string FinishingDate { get; set; }
         public double Salary { get; set; }
         public string RequiredDocuments { get; set; }
 
