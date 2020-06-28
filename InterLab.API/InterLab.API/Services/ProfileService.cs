@@ -78,23 +78,28 @@ namespace InterLab.API.Services
 
         public async Task<ProfileResponse> UpdateAsync(int id, Profile profile)
         {
-            var existingProfile = await _profileRepository.FindById(id);
+            IEnumerable<Profile> existingProfile = await _profileRepository.ListByUserId(id);
+           
 
             if (existingProfile == null)
-                return new ProfileResponse("Profile not found");
+                return new ProfileResponse("User not registred");
 
-            existingProfile.FirstName = profile.FirstName;
-            existingProfile.LastName = profile.LastName;
-            existingProfile.Phone = profile.Phone;
-            existingProfile.Country = profile.Country;
-            existingProfile.City = profile.City;
-
+            existingProfile.First().FirstName = profile.FirstName;
+            existingProfile.First().LastName = profile.LastName;
+            existingProfile.First().Phone = profile.Phone;
+            existingProfile.First().Country = profile.Country;
+            existingProfile.First().City = profile.City;
+            existingProfile.First().Field = profile.Field;
+            existingProfile.First().Description = profile.Description;
+            existingProfile.First().University = profile.University;
+            existingProfile.First().Degree = profile.Degree;
+            existingProfile.First().Semester = profile.Semester;
             try
             {
-                _profileRepository.Update(existingProfile);
+                _profileRepository.Update(existingProfile.First());
                 await _unitOfWork.CompleteAsync();
 
-                return new ProfileResponse(existingProfile);
+                return new ProfileResponse(existingProfile.First());
             }
             catch (Exception ex)
             {
