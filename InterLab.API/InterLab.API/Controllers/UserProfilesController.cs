@@ -73,11 +73,11 @@ namespace InterLab.API.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveProfileResource resource)
+        [HttpPut]
+        public async Task<IActionResult> PutAsync(int userId, [FromBody] SaveProfileResource resource)
         {
             var profiles = _mapper.Map<SaveProfileResource, Domain.Models.Profile>(resource);
-            var result = await _profileService.UpdateAsync(id, profiles);
+            var result = await _profileService.UpdateAsync(userId, profiles);
 
             if (!result.Success)
                 return BadRequest(result.Message);
