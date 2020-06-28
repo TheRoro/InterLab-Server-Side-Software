@@ -12,12 +12,12 @@ namespace InterLab.API.Resources
         public string State { get; set; }
         [Required]
         public string Description { get; set; }
-        [Required]
-        public DateTime PublicationDate { get; set; }
-        [Required]
-        public DateTime StartingDate { get; set; }
-        [Required]
-        public DateTime FinishingDate { get; set; }
+
+        public string PublicationDate { get; set; }
+
+        public string StartingDate { get; set; }
+
+        public string FinishingDate { get; set; }
         [Required]
         public double Salary { get; set; }
         [Required]

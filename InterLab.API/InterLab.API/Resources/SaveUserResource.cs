@@ -15,7 +15,7 @@ namespace InterLab.API.Resources
         [MaxLength(30)]
         public string Password { get; set; }
         [Required]
-        [MaxLength(30)]
+        [MaxLength(40)]
         public string Email { get; set; }
         [MaxLength(30)]
         public string DateCreated { get; set; }

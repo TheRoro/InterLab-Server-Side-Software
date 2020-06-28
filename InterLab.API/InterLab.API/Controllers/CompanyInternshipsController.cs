@@ -51,7 +51,7 @@ namespace InterLab.API.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveInternshipResource resource, int companyId)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
             var internship = _mapper.Map<SaveInternshipResource, Internship>(resource);
             var result = await _internshipService.SaveAsync(internship, companyId);
