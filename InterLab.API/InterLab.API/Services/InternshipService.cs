@@ -54,7 +54,6 @@ namespace InterLab.API.Services
             try
             {
                 Company company = await _companyRepository.FindById(companyId);
-                internship.Company = company;
                 company.Internships.Add(internship);
                 await _internshipRepository.AddAsync(internship);
                 await _unitOfWork.CompleteAsync();
