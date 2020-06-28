@@ -74,9 +74,9 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Internship>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Internship>().Property(p => p.State).IsRequired().HasMaxLength(30);
             builder.Entity<Internship>().Property(p => p.Description).IsRequired().HasMaxLength(300);
-            builder.Entity<Internship>().Property(p => p.PublicationDate).IsRequired().HasMaxLength(40);
-            builder.Entity<Internship>().Property(p => p.StartingDate).IsRequired().HasMaxLength(40);
-            builder.Entity<Internship>().Property(p => p.FinishingDate).IsRequired().HasMaxLength(40);
+            builder.Entity<Internship>().Property(p => p.PublicationDate).HasMaxLength(40);
+            builder.Entity<Internship>().Property(p => p.StartingDate).HasMaxLength(40);
+            builder.Entity<Internship>().Property(p => p.FinishingDate).HasMaxLength(40);
             builder.Entity<Internship>().Property(p => p.Salary).IsRequired().HasMaxLength(30);
             builder.Entity<Internship>().Property(p => p.Location).IsRequired();
             builder.Entity<Internship>().Property(p => p.RequiredDocuments).IsRequired();
@@ -125,9 +125,9 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Qualification>().ToTable("Qualifications");
             builder.Entity<Qualification>().HasKey(p => p.Id);
             builder.Entity<Qualification>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Qualification>().Property(p => p.Comment).IsRequired().HasMaxLength(50);
+            builder.Entity<Qualification>().Property(p => p.Comment).IsRequired().HasMaxLength(100);
             builder.Entity<Qualification>().Property(p => p.Score).IsRequired();
-            builder.Entity<Qualification>().Property(p => p.Author).IsRequired().HasMaxLength(8);
+            builder.Entity<Qualification>().Property(p => p.Author).IsRequired().HasMaxLength(10);
 
             //Relationships:
 
@@ -143,8 +143,8 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Request>().ToTable("Requests");
             builder.Entity<Request>().HasKey(p => p.Id);
             builder.Entity<Request>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Request>().Property(p => p.State).IsRequired().HasMaxLength(10);
-            builder.Entity<Request>().Property(p => p.CreationDate).IsRequired().HasMaxLength(10);
+            builder.Entity<Request>().Property(p => p.State).IsRequired().HasMaxLength(20);
+            builder.Entity<Request>().Property(p => p.CreationDate).IsRequired().HasMaxLength(20);
 
             //Relationships:
 
@@ -160,7 +160,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Requirement>().ToTable("Requirements");
             builder.Entity<Requirement>().HasKey(p => p.Id);
             builder.Entity<Requirement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Requirement>().Property(p => p.Field).IsRequired().HasMaxLength(10);
+            builder.Entity<Requirement>().Property(p => p.Field).IsRequired().HasMaxLength(30);
             builder.Entity<Requirement>().Property(p => p.Semester).IsRequired().HasMaxLength(10);
 
             //Relationships:
@@ -173,10 +173,10 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<User>().ToTable("Users");
             builder.Entity<User>().HasKey(p => p.Id);
             builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<User>().Property(p => p.Username).IsRequired().HasMaxLength(20);
-            builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(30);
+            builder.Entity<User>().Property(p => p.Username).IsRequired().HasMaxLength(30);
+            builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(40);
             builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(30);
-            builder.Entity<User>().Property(p => p.DateCreated).HasMaxLength(10);
+            builder.Entity<User>().Property(p => p.DateCreated).HasMaxLength(20);
             builder.Entity<User>().Property(p => p.Token);
 
             //Relationships Student:

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
-    [Route("/api/user/{userId}/companies")]
+    [Route("/api/users/{userId}/companies")]
     public class UserCompaniesController : Controller
     {
         private readonly ICompanyService _companyService;
