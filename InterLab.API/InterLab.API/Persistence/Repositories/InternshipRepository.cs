@@ -13,7 +13,7 @@ namespace InterLab.API.Persistence.Repositories
     {
         public InternshipRepository(AppDbContext context) : base(context) { }
 
-        public async Task<Internship> FindById(int id)
+        public async Task<Internship> FindByIdAsync(int id)
         {
             return await _context.Internships.FindAsync(id);
         }
