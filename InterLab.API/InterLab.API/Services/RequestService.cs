@@ -116,5 +116,23 @@ namespace InterLab.API.Services
                 return new RequestResponse($"An error ocurred while deleting request: {ex.Message}");
             }
         }
+
+        public async Task<RequestResponse> AssignUserInternshipAsync(int userId, int internshipId)
+        {
+            try
+            {
+
+                await _requestRepository.AssignUserInternship(userId, internshipId);
+                await _unitOfWork.CompleteAsync();
+                Request request = await _requestRepository.FindByUserIdAndInternshipId(userId, internshipId);
+                return new RequestResponse(request);
+            }
+            catch (Exception ex)
+            {
+                return new RequestResponse($"An error ocurred while assigning Company to User: {ex.Message}");
+            }
+
+        }
+
     }
 }

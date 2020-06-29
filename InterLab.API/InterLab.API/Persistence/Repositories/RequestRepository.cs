@@ -17,6 +17,10 @@ namespace InterLab.API.Persistence.Repositories
         {
             return await _context.Requests.FindAsync(id);
         }
+        public async Task<Request> FindByUserIdAndInternshipId(int userId, int internshipId)
+        {
+            return await _context.Requests.FindAsync(userId, internshipId);
+        }
         public async Task<Request> FindByInternshipIdAndRequestIdAsync(int internshipId, int id)
         {
             return await _context.Requests.FindAsync(id, internshipId);
@@ -53,6 +57,16 @@ namespace InterLab.API.Persistence.Repositories
         public void Remove(Request request)
         {
             _context.Requests.Remove(request);
+        }
+
+        public async Task AssignUserInternship(int userId, int internshipId)
+        {
+            Request request = await FindByUserIdAndInternshipId(userId, internshipId);
+            if (request == null)
+            {
+                request = new Request { UserId = userId, InternshipId = internshipId };
+                await AddAsync(request);
+            }
         }
     }
 }
