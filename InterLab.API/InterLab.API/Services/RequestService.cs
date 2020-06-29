@@ -75,28 +75,7 @@ namespace InterLab.API.Services
                 return new RequestResponse($"An error ocurred while saving the request: {ex.Message}");
             }
         }
-        public async Task<RequestResponse> UpdateAsync(int id, Request request)
-        {
-            var existingRequest = await _requestRepository.FindByIdAsync(id);
-
-            if (existingRequest == null)
-                return new RequestResponse("Request not found");
-
-            existingRequest.State = request.State;
-
-
-            try
-            {
-                _requestRepository.Update(existingRequest);
-                await _unitOfWork.CompleteAsync();
-
-                return new RequestResponse(existingRequest);
-            }
-            catch (Exception ex)
-            {
-                return new RequestResponse($"An error ocurred while updating request: {ex.Message}");
-            }
-        }
+        
         public async Task<RequestResponse> DeleteAsync(int id)
         {
             var existingRequest = await _requestRepository.FindByIdAsync(id);
@@ -116,5 +95,23 @@ namespace InterLab.API.Services
                 return new RequestResponse($"An error ocurred while deleting request: {ex.Message}");
             }
         }
+
+        public async Task<RequestResponse> AssignUserInternshipAsync(int userId, int internshipId)
+        {
+            try
+            {
+
+                await _requestRepository.AssignUserInternship(userId, internshipId);
+                await _unitOfWork.CompleteAsync();
+                Request request = await _requestRepository.FindByUserIdAndInternshipId(userId, internshipId);
+                return new RequestResponse(request);
+            }
+            catch (Exception ex)
+            {
+                return new RequestResponse($"An error ocurred while assigning Company to User: {ex.Message}");
+            }
+
+        }
+
     }
 }

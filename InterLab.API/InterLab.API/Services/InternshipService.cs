@@ -13,11 +13,13 @@ namespace InterLab.API.Services
     {
         private readonly IInternshipRepository _internshipRepository;
         private readonly ICompanyRepository _companyRepository;
+        private readonly IRequestRepository _requestRepository;
         public readonly IUnitOfWork _unitOfWork;
 
-        public InternshipService(IInternshipRepository internshipRepository, ICompanyRepository companyRepository, IUnitOfWork unitOfWork)
+        public InternshipService(IInternshipRepository internshipRepository, ICompanyRepository companyRepository, IUnitOfWork unitOfWork, IRequestRepository requestRepository)
         {
             _internshipRepository = internshipRepository;
+            _requestRepository = requestRepository;
             _companyRepository = companyRepository;
             _unitOfWork = unitOfWork;
         }
@@ -107,6 +109,14 @@ namespace InterLab.API.Services
             {
                 return new InternshipResponse($"An error ocurred while deleting internship:  {ex.Message}");
             }
+        }
+
+        public async Task<IEnumerable<Internship>> ListByUserIdAsync(int userId)
+        {
+            var request = await _requestRepository.ListByUserIdAsync(userId);
+            var internships = request.Select(uc => uc.Internship).ToList();
+            return internships;
+
         }
     }
 }

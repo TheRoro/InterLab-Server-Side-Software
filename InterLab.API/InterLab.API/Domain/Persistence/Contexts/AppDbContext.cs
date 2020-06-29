@@ -141,10 +141,8 @@ namespace InterLab.API.Domain.Persistence.Contexts
 
             //Request Entity
             builder.Entity<Request>().ToTable("Requests");
-            builder.Entity<Request>().HasKey(p => p.Id);
-            builder.Entity<Request>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Request>().Property(p => p.State).IsRequired().HasMaxLength(20);
-            builder.Entity<Request>().Property(p => p.CreationDate).IsRequired().HasMaxLength(20);
+            builder.Entity<Request>()
+                        .HasKey(wc => new { wc.UserId, wc.InternshipId });
 
             //Relationships:
 
