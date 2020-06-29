@@ -7,9 +7,6 @@ namespace InterLab.API.Domain.Models
 {
     public class Request
     {
-        public int Id { get; set; }
-        public string State { get; set; }
-        public DateTime CreationDate { get; set; }
 
         //Relationships:
 

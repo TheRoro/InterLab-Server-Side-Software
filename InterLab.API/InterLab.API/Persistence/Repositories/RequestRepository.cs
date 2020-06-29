@@ -40,11 +40,14 @@ namespace InterLab.API.Persistence.Repositories
             .Include(r => r.Internship)
             .ToListAsync();
 
-        public async Task<IEnumerable<Request>> ListByUserIdAsync(int userId) =>
-            await _context.Requests
-            .Where(r => r.UserId == userId)
-            .Include(r => r.User)
+        public async Task<IEnumerable<Request>> ListByUserIdAsync(int userId)
+        {
+            return await _context.Requests
+            .Where(uc => uc.UserId == userId)
+            .Include(uc => uc.User)
+            .Include(uc => uc.Internship)
             .ToListAsync();
+        }
 
         public async Task AddAsync(Request request)
         {
