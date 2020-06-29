@@ -31,5 +31,20 @@ namespace InterLab.API.Controllers
                 .Map<IEnumerable<Requirement>, IEnumerable<RequirementResource>>(requirements);
             return resources;
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SaveRequirementResource resource, int internshipId)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+            var requirement = _mapper.Map<SaveRequirementResource, Requirement>(resource);
+            var result = await _requirementService.SaveAsync(requirement, internshipId);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var requirementResource = _mapper.Map<Requirement, RequirementResource>(result.Resource);
+            return Ok(requirementResource);
+        }
     }
 }
