@@ -8,11 +8,6 @@ namespace InterLab.API.Resources
 {
     public class SaveRequestResource
     {
-        [Required]
-        [MaxLength(20)]
-        public string State { get; set; }
-        [Required]
-        [MaxLength(20)]
-        public DateTime CreationDate { get; set; }
+       
     }
 }

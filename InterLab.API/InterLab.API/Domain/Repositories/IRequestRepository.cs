@@ -11,6 +11,7 @@ namespace InterLab.API.Domain.Repositories
         Task<Request> FindByIdAsync(int id);
         Task<Request> FindByInternshipIdAndRequestIdAsync(int internshipId, int id);
         Task<Request> FindByUserIdAndRequestIdAsync(int userId, int id);
+        Task<Request> FindByUserIdAndInternshipId(int userId, int internshipId);
 
         Task<IEnumerable<Request>> ListAsync();
         Task<IEnumerable<Request>> ListByUserIdAsync(int userId);
@@ -19,6 +20,8 @@ namespace InterLab.API.Domain.Repositories
         Task AddAsync(Request request);
         void Update(Request request);
         void Remove(Request request);
+
+        Task AssignUserInternship(int userId, int internshipId);
 
     }
 }
