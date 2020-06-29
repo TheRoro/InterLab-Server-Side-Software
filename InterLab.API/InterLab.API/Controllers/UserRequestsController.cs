@@ -11,15 +11,17 @@ using System.Threading.Tasks;
 
 namespace InterLab.API.Controllers
 {
-    [Route("/api/users/{userId}/requests")]
+    [Route("/api/users/{userId}/internships")]
     public class UserRequestsController : Controller
     {
         private readonly IRequestService _requestService;
+        private readonly IInternshipService _internshipService;
         private readonly IMapper _mapper;
 
-        public UserRequestsController(IRequestService requestService, IMapper mapper)
+        public UserRequestsController(IRequestService requestService, IInternshipService internshipService, IMapper mapper)
         {
             _requestService = requestService;
+            _internshipService = internshipService;
             _mapper = mapper;
         }
 
@@ -40,6 +42,18 @@ namespace InterLab.API.Controllers
             var requestResource = _mapper.Map<Request, RequestResource>(result.Resource);
             return Ok(requestResource);
 
+        }
+
+        [HttpPost("{internshipId}")]
+        public async Task<IActionResult> AssignUserInternship(int userId, int internshipId)
+        {
+
+            var result = await _requestService.AssignUserInternshipAsync(userId, internshipId);
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var Resource = _mapper.Map<Internship, InternshipResource>(result.Resource.Internship);
+            return Ok(Resource);
         }
     }
 }
