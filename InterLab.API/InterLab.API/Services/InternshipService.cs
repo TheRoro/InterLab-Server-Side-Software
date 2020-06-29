@@ -24,7 +24,7 @@ namespace InterLab.API.Services
 
         public async Task<InternshipResponse> GetByIdAsync(int id)
         {
-            var existingIntership = await _internshipRepository.FindById(id);
+            var existingIntership = await _internshipRepository.FindByIdAsync(id);
 
             if (existingIntership == null)
                 return new InternshipResponse("Internship not found");
@@ -68,7 +68,7 @@ namespace InterLab.API.Services
 
         public async Task<InternshipResponse> UpdateAsync(int id, Internship internship)
         {
-            var existingIntership = await _internshipRepository.FindById(id);
+            var existingIntership = await _internshipRepository.FindByIdAsync(id);
 
             if (existingIntership == null)
                 return new InternshipResponse("Intership not found");
@@ -90,7 +90,7 @@ namespace InterLab.API.Services
         }
         public async Task<InternshipResponse> DeleteAsync(int id, int companyId)
         {
-            var existingIntership = await _internshipRepository.FindById(id);
+            var existingIntership = await _internshipRepository.FindByIdAsync(id);
 
             if (existingIntership == null)
                 return new InternshipResponse("Internship not found");

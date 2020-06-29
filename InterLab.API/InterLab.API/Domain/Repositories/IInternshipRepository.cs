@@ -8,7 +8,7 @@ namespace InterLab.API.Domain.Repositories
 {
     public interface IInternshipRepository
     {
-        Task<Internship> FindById(int id);
+        Task<Internship> FindByIdAsync(int id);
         Task<Internship> FindByCompanyIdAndIntershipIdAsynd(int companyId, int Id);
 
         Task<IEnumerable<Internship>> ListAsync();

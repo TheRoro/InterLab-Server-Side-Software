@@ -11,7 +11,6 @@ namespace InterLab.API.Resources
         [Required]
         [MaxLength(30)]
         public string Field { get; set; }
-        [MaxLength(10)]
         public int Semester { get; set; }
     }
 

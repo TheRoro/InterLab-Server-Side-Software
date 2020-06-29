@@ -14,7 +14,7 @@ namespace InterLab.API.Domain.Services
         Task<IEnumerable<Requirement>> ListAsync();
         Task<IEnumerable<Requirement>> ListByInternshipIdAsync(int internshipId);
 
-        Task<RequirementResponse> SaveAsync(Requirement requirement);
+        Task<RequirementResponse> SaveAsync(Requirement requirement, int internshipId);
         Task<RequirementResponse> UpdateAsync(int id, Requirement requirement);
         Task<RequirementResponse> DeleteAsync(int id);
     }
