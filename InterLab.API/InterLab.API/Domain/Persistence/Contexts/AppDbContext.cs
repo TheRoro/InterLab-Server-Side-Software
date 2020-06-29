@@ -161,7 +161,7 @@ namespace InterLab.API.Domain.Persistence.Contexts
             builder.Entity<Requirement>().HasKey(p => p.Id);
             builder.Entity<Requirement>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Requirement>().Property(p => p.Field).IsRequired().HasMaxLength(30);
-            builder.Entity<Requirement>().Property(p => p.Semester).IsRequired().HasMaxLength(10);
+            builder.Entity<Requirement>().Property(p => p.Semester).IsRequired();
 
             //Relationships:
 

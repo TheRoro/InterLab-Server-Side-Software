@@ -43,21 +43,6 @@ namespace InterLab.API.Controllers
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveRequirementResource resource)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState.GetErrorMessages());
-            var requirement = _mapper.Map<SaveRequirementResource, Requirement>(resource);
-            var result = await _requirementService.SaveAsync(requirement);
-
-            if (!result.Success)
-                return BadRequest(result.Message);
-
-            var requirementResource = _mapper.Map<Requirement, RequirementResource>(result.Resource);
-            return Ok(requirementResource);
-        }
-
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveRequirementResource resource)
         {

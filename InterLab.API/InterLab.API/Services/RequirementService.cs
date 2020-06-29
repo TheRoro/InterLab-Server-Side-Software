@@ -12,11 +12,13 @@ namespace InterLab.API.Services
     public class RequirementService : IRequirementService
     {
         private readonly IRequirementRepository _requirementRepository;
+        private readonly IInternshipRepository _internshipRepository;
         public readonly IUnitOfWork _unitOfWork;
 
-        public RequirementService(IRequirementRepository requirementRepository, IUnitOfWork unitOfWork)
+        public RequirementService(IRequirementRepository requirementRepository, IUnitOfWork unitOfWork, IInternshipRepository internshipRepository)
         {
             _requirementRepository = requirementRepository;
+            _internshipRepository = internshipRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -38,10 +40,12 @@ namespace InterLab.API.Services
             return await _requirementRepository.ListByInternshipIdAsync(internshipId);
         }
 
-        public async Task<RequirementResponse> SaveAsync(Requirement requirement)
+        public async Task<RequirementResponse> SaveAsync(Requirement requirement, int internshipId)
         {
             try
             {
+                Internship internship = await _internshipRepository.FindByIdAsync(internshipId);
+                internship.Requirement = requirement;
                 await _requirementRepository.AddAsync(requirement);
                 await _unitOfWork.CompleteAsync();
 
@@ -49,8 +53,9 @@ namespace InterLab.API.Services
             }
             catch (Exception ex)
             {
-                return new RequirementResponse($"An error ocurred while saving the requirement: {ex.Message}");
+                return new RequirementResponse($"An error ocurred while saving the profile: {ex.Message}");
             }
+
         }
         public async Task<RequirementResponse> UpdateAsync(int id, Requirement requirement)
         {
