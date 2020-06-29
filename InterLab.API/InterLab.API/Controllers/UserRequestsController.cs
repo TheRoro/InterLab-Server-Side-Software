@@ -26,13 +26,14 @@ namespace InterLab.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<RequestResource>> GetAllByUserId(int userId)
+        public async Task<IEnumerable<InternshipResource>> GetAllByUserIdAsync(int userId)
         {
-            var requests = await _requestService.ListByUserIdAsync(userId);
+            var internships = await _internshipService.ListByUserIdAsync(userId);
             var resources = _mapper
-                .Map<IEnumerable<Request>, IEnumerable<RequestResource>>(requests);
+                .Map<IEnumerable<Internship>, IEnumerable<InternshipResource>>(internships);
             return resources;
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRequestByIdAsync(int id)
         {

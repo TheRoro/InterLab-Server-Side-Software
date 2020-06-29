@@ -38,17 +38,7 @@ namespace InterLab.API.Controllers
             return Ok(requestService);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveRequestResource resource)
-        {
-            var request = _mapper.Map<SaveRequestResource, Request>(resource);
-            var result = await _requestService.UpdateAsync(id, request);
-
-            if (!result.Success)
-                return BadRequest(result.Message);
-            var requestResource = _mapper.Map<Request, RequestResource>(result.Resource);
-            return Ok(requestResource);
-        }
+      
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
