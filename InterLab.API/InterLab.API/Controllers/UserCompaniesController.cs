@@ -45,5 +45,15 @@ namespace InterLab.API.Controllers
             return Ok(tagResource);
         }
 
+        [HttpDelete("{companyId}")]
+        public async Task<IActionResult> UnassignUserCompanyAsync(int userId, int companyId) 
+        {
+            var result = await _userCompanyService.UnassignUserCompanyAsync(userId, companyId);
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var tagResource = _mapper.Map<Company, CompanyResource>(result.Resource.Company);
+            return Ok(tagResource);
+        }
     }
 }
